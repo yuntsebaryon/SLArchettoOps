@@ -1,0 +1,221 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{natbib}
+% \bibliographystyle{unsrtnat}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+% \usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{longtable}
+
+% ------------------------------------------------------------------------
+\newcommand{\myCheckBox}{\CheckBox[width=0.8em,bordercolor={0.65 0.79 0.94},height=0.8em]}
+\renewcommand{\arraystretch}{1.3}
+
+% ------------------------------------------------------------------------
+
+\begin{document}
+
+\title{\textbf{SLArchetto Operation Procedure}}
+\author{Yun-Tse Tsai}
+\date{\today}
+
+\maketitle
+
+%-------------------------------------------------------------------
+
+Notes:
+\begin{itemize}
+\setlength\itemsep{-0.2em}
+\item P\&ID is attached in the end of this list. Valve labels have been changed.
+\item We have to avoid air flowing into the LAr filter and the plumbing system, which will compromise the filter and the LAr purity.  Check the valves' status carefully.
+\item Every time when we have air in a section of the plumbing system (typically before V0 when starting filling LAr from a new dewar), do close V4 and open the purging valve, V3.
+\item RTD2 (the bottom one) is not available in this run, but it is repetitive to RTD1.
+\item RTD3 in this run is connected to Cryocon channel B.
+\item We want to take LArPix data during filling (but after the vessel is at $\ge$ atmospheric pressure).
+\item Need to turn off the LArPix tile before ramping up the high voltage.
+\end{itemize}
+
+%-------------------------------------------------------------------
+
+\tabcolsep=10pt
+\begin{longtable}{p{0.5\textwidth}p{0.5\textwidth}}
+\hline
+\hline
+Checklist & What to Do and Detailed Description \\
+\hline
+\multicolumn{2}{l}{\textbf{24 hours before LAr filling}} \\
+\myCheckBox{Vessel closed and tightened} & \\
+\myCheckBox{Leak check} & \\
+\myCheckBox{All valves are closed} &  \\
+\myCheckBox{V14, V16 are open} & For pumping the vessel \\
+\myCheckBox{P1 (scroll pump) on} & Need to use the scroll pump first \\
+\myCheckBox{P1 on for 30 minutes, PG5 (pressure gauge) way below 0 psig, PT1 (pressure transducer) at absolutely 0 for more than 10 minutes} & Read PT1 from \textbf{Pressure} in the Ignition detector monitor \\
+\myCheckBox{V16 closed} & \\
+\myCheckBox{P1 off} & \\
+\myCheckBox{V17 open} & Prepare to start the turbo pump \\
+\myCheckBox{TP1 (turbo pump) on} &  \\
+\myCheckBox{V18 and the valve on the Hicube pump open} & The Hicube pump is located behind the computer monitor.  V18 is connected on the thermosyphon evaporator, and is not shown in the current version of P\&ID \\
+\myCheckBox{The HiCube pump on} & Pump the thermosyphon vacuum jacket \\
+\myCheckBox{LAr filter regenerated} & See the procedure for LAr filter regeneration \\
+\myCheckBox{V4, V5, V9, V10, V11, V12 closed, V6 opened} & Prepare to evacuate the LAr filter up to V11/V12 with the scroll pump \\
+\myCheckBox{P1 connected to V5.  V5 opened and P1 on} & Evacuate the LAr filter up to V11/V12 with the scroll pump \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Prepare LAr filling}} \\
+\myCheckBox{TP1 (turbo pump) pumped for 24 hours, PT1  (pressure transducer) at absolutely 0 for at least 24 hours} & Read PT1 from \textbf{Pressure} in the Ignition detector monitor \\
+\myCheckBox{The vacuum in the thermosyphon line jacket is at $10^{-3}$ hPa level or below} & Read the display at the Hicube pump \\
+\myCheckBox{Purge the thermosyphon line} & Open the Tree (botton near home at the top left corner) $\to$ subsystems $\to$ services $\to$ Thermosyphons (we are TSL11).
+\newline Click the number and a side panel will open, click \texttt{purge}.
+\newline Purge will take about 3 minutes \\
+\myCheckBox{HEPAs speed high} & HEPA control is in the back of the fans (outside the clean tent), and there are five HEPAs \\
+\myCheckBox{Ventilation light on} & Red light at the east wall of the LNTF \\
+\myCheckBox{Ventilation of the clean room on} & Feel the wind blowing \\
+\myCheckBox{Emergency exhaust fan button is yellow} & Press the red button on the east wall of the LNTF to turn the exhaust fan to high speed. Note: Button turns ``yellow'' when the fan is on high speed \\
+\myCheckBox{The front and back doors of LNTF are open and stay open} & \\
+\myCheckBox{Fill with 10L at 10 slpm, and the pressure is less than 5~bar (better less than 3~bar)} & Fill the numbers 10L at 10 slpm, and click \texttt{Add LN$_2$}.  Click on the pressure graph below the value of liters to check the pressure  \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Fill the open mouth dewar (LAr filter cooling)}} \\
+\myCheckBox{V2 closed} & \\
+\myCheckBox{V5 closed, the scroll pump off} & \\
+\myCheckBox{LAr supply dewar has $<$~230 psi} & If it is higher, vent the argon to lower pressure $\sim$230 psi.
+\newline If it is too low (such as 30 psi), open the pressure builder to build the pressure to $>$~100 psi \\
+\myCheckBox{PPE (cryo gloves, safety glasses) on} & \\
+\myCheckBox{LAr supply dewar connected to the transfer line} & \\
+\myCheckBox{V0, V1 open} & Start filling the open mouth dewar.  It will take about 40 minutes \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 15~L} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 20~L} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 25~L} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 30~L} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 35~L} & \\
+\myCheckBox{Open mouth dewar full.  V1 closed.  LAr dewar closed} & Finish filling the open mouth dewar \\
+% \myCheckBox{Put the blue polymeric foam on top of the open mouth dewar} & \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Fill the main vessel}} \\
+\myCheckBox{V17 closed} & V17 is a torque valve \\
+\myCheckBox{TP1 (turbo pump) off} & Prepare for filling the main vessel \\
+\myCheckBox{LArPix fan on} & Plug the cable into the extension cord used for the turbo pump \\
+\myCheckBox{V6, V12 open} & \\
+\myCheckBox{Double check the closed valves: V1, V2, V3, V4, V5, V9, V10, V11, V13, V15, V16, V17} & \\
+\myCheckBox{Air in the tube before V4 purged} & Open V2 and LAr dewar valve.  Slowly open V3 until the liquid is spraying \\
+\myCheckBox{LAr dewar closed} & \\
+\myCheckBox{V4 closed} & \\
+\myCheckBox{V2 open} & \\
+\myCheckBox{Double check the open valves: V0, V2, V6, V12, \textbf{V14 (IMPORTANT)}} & V14 is on the top lid, connecting to the hose.  If closed, the burst disk will crack when LAr just fills in.\\
+\myCheckBox{LAr dewar open, V3 open} & Purge the air in the line and vent through V3 \\
+\myCheckBox{Liquid spill observed from V3.  V3 closed.  LAr dewar closed} & End the purge \\
+\myCheckBox{PT1 (pressure transducer) at absolutely 0} & Read PT1 from \textbf{Pressure} in the Ignition detector monitor \\
+\myCheckBox{V4 opened} & V4 is a torque valve \\
+\myCheckBox{Two people ready: One adjusting the LAr flow, the other adjusting V15 (venting)} & One opens the LAr dewar slightly, and the other monitors PG5 (pressure gauge) or PT1.  When the pressure reaches 2.5 psig at PG5 (17.1 psia at PT1), open V15 slightly to prevent the pressure from building up.
+\newline We want to keep the pressure at about 2 psig at PG5 (16.6 psia at PT1) and not to exceed 4 psig at PG5 (18.6 psia at PT1) all the time.  We also don’t want the vessel pressure to go below 0 psig at PG5 (14.6 psia at PT1), in which condition the air would come in and contaminate the LAr purity. \\
+\myCheckBox{LArPix power supply on.  Voltage at 24~V, current limit at 1~A} & \\
+\myCheckBox{LArPix starts taking data when the pressure reaches $\sim$14.6~psia} & Ask Patrick \\
+\myCheckBox{Equilibrium reached and $\sim$3~bar at PG3 (pressure gauge on top of the LAr filter)} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 40~L} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 45~L} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 50~L} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 55~L} & \\
+\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 60~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 65~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 70~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 75~L} & \\
+\myCheckBox{During fill when the liquid level in the open mouth vessel goes down, open V1 and increase flow to refill} & \\
+
+\hline
+\multicolumn{2}{l}{\textbf{LAr dewar transition}} \\
+\myCheckBox{When the LAr dewar is almost empty, close V0, V2, and V4} & Pressure at PG3 (pressure gauge) will start dropping when the LAr dewar is almost empty \\
+\myCheckBox{1 -- 3~psig at PG5 (pressure gauge) or 15.6 -- 17.6~psia at PT1 (pressure transducer) during the LAr dewar transition} & Adjust V15 to control the pressure.  May need to completely close it.  Read PT1 from \textbf{Pressure} in the Ignition detector monitor \\
+\myCheckBox{The second LAr dewar connected} & \\
+\myCheckBox{V0 and V1 open, V2 closed} & Refill the open mouth dewar first after the LAr dewar transition \\
+\myCheckBox{Air in the tube before V4 purged} & Open V2 and LAr dewar valve.  Slowly open V3 until the liquid is spraying \\
+\myCheckBox{LAr dewar closed} & \\
+% \myCheckBox{V2 closed} & \\
+\myCheckBox{V4 open} & \\
+\myCheckBox{Two people ready: One adjusting the LAr flow, the other adjusting V15 (venting)} & One opens the LAr dewar slightly, and the other monitors PG5 or PT1.  When the pressure reaches 2.5~psig at PG5 (17.1~psia at PT1), open V15 slightly to prevent the pressure from building up.
+\newline We want to keep the pressure at about 2~psig at PG5 (16.6~psia at PT1) and not to exceed 4~psig at PG5 (18.6~psia at PT1) all the time.  We also don’t want the vessel pressure to go below 0~psig at PG5 (14.6~psia at PT1), in which condition the air would come in and contaminate the LAr purity. \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Stop LAr filling}} \\
+\myCheckBox{Cryocon D (RTD 4) reaches $\sim$90~K at $\sim$16.1~psia, or drops significantly} & This means the LAr reaches the desired liquid level.  Read RTD values at the Ignition detector monitor or the Cryocon device \\
+\myCheckBox{Liquid seen through the viewport} & Turn on the flash light and place it on top of the viewport shield \\
+\myCheckBox{When Cryocan E (RTD 5) shows the beginning of the significant temperature drop, two people ready to close the valves} & Stop filling LAr from now.  When the pressure starts to drop, slightly close V15.  Adjust V15 according to the pressure -- we don’t want the pressure to go below 2~psig at PG5 (pressure gauge) or 16.6~psia at PT1 (pressure transducer) nor above 3~psig at PG5 (17.6~psia at PT1).  The working pressure should be $\sim$3~psig at PG5 (17.6~psia at PT1) \\
+\myCheckBox{V15, V14, V12, V6, V4, V2, and V0 closed} & \\
+\myCheckBox{All valves closed} & \\
+\myCheckBox{Electrical box plugged and switched on} & Toggle up, switch on in case we need heaters \\
+\myCheckBox{Set the threshold of LArPix channels} & Need to set the threshold with HV off.  Call Patrick at this moment \\
+\myCheckBox{Enable the warning, alert, and alarm for the pressure} & Click the alarm button.  Warning range: 14 -- 17.7~psia; Alert range: 14 -- 18.7~psia; Alarm range: 14 -- 19.7~psia \\
+\myCheckBox{Enable the warning, alert, and alarm for RTD 1, 3, and 4} & Click the alarm button.  Warning range: 87 -- 91~K; Alert range: 85 -- 92~K; Alarm range: 83 -- 93~K \\
+\myCheckBox{Enable the warning, alert, and alarm for RTD 5} & Click the alarm button.  Warning range: 87 -- 130~K; Alert range: 85 -- 130~K; Alarm range: 83 -- 130~K \\
+\myCheckBox{Enable the warning and alert for RTD 6} & Click the alarm button.  Warning range: 150 -- 163~K; Alert range: 145 -- 170~K \\
+\myCheckBox{Open mouth dewar lowered.  LAr filter warming up.} & Prepare to release the pressure from the LAr evaporation in the LAr filter \\
+\myCheckBox{20-40~minutes for equilibrium} & Check for example, if temprature at RTD~4 is rising, if the pressure is stable \\
+\myCheckBox{Cryoncon A, B, C, D (RTD 1, 2, 3, 4) show $<$~90K at $\sim$16~psia} & \\
+\myCheckBox{V4, V5, V9, V11, V12 closed.  V6 opened} & Prepare to vent the LAr filter \\
+\myCheckBox{LAr filter vented through V10} & \\
+\myCheckBox{All valves closed} & The valves likely were not closed because of the ice on them.  Check them again and completely close them \\
+\myCheckBox{Emergency exhaust fan button is red} & Press the yellow button on the east wall of the LNTF to turn the exhaust fan to low speed. Note: Button turns ``red'' when the fan is on low speed \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Ramp up high voltage}} \\
+\myCheckBox{LArPix data taking stopped} & At this moment, ask Patrick. Will have instructions later \\
+\myCheckBox{LArPix tile powered off} & At this moment, ask Patrick. Will have instructions later \\
+\myCheckBox{High voltage power supply on} & \\
+\myCheckBox{PicoAmmeter on, set to the `zcheck` mode} & \\
+\myCheckBox{PicoAmmter DAQ script running and field shell current updating} & Log in
+\newline \texttt{neutrino@nu-daq01-ir2.slac.stanford.edu}
+\newline run
+\newline \texttt{cd \~/kapton\_daq}
+\newline \texttt{source setup.sh}
+\newline \texttt{nohup python3 daq.py --config config/config\_keithley6485.yaml \&}
+\newline Check the \texttt{Current} in the \texttt{HV Control} panel in the main page, or \texttt{PicoAm Current} in the \texttt{SLArchetto High Voltage Control} page \\
+\myCheckBox{HV status on and HV current set to 1mA} & Go to the \texttt{HV Control} panel, and then go to \texttt{HV ramping}.
+\newline Click \texttt{PS initialization}.
+\newline Then the button \texttt{HV Status On/Off} should be On and green. \\
+% \myCheckBox{HV current set to 1mA} & Call Gianluca for testing the new button \\
+\myCheckBox{High voltage ramped up to 15~kV} & Set \texttt{Target voltage} to 15~kV, and click \texttt{HV ramping Interlock ON}, disabling the interlock.
+\newline Click \texttt{Start}.
+\newline More details in \href{https://drive.google.com/file/d/1cCuX7aAKU5J-GfdMOtygUpqLafvZ-xzg}{RampingHighVoltage.pdf}. \\
+\myCheckBox{High voltage (Cathode voltage) at 15~kV, field shell current (PicoAm Current) at $\sim$9000 -- 10000~nA} & Check \texttt{Cathode Voltage} and \texttt{PicoAm Current} in the SLArchetto High Voltage Control page, or \texttt{Voltage} and \texttt{Current} in the main monitor \\
+\myCheckBox{Enable the alert and alarm for high voltage} & Click the alarm button.  Warning range: 14.95 -- 15.05~kV; Alert range: 14.9 -- 15.1~kV; Alarm range: 14.8 -- 15.2~kV \\
+\myCheckBox{Enable the warning, alert, and alarm for the current} & Click the alarm button.  Warning range: -20,000 -- 0~nA; Alert range: -25,000 -- 0~nA; Alarm range: -30,000 -- 0~nA \\
+\myCheckBox{HV ramping Interlock OFF} & \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Start data taking}} \\
+\myCheckBox{LArPix tile powered on} & At this moment, ask Patrick. Will have instructions later \\
+\myCheckBox{LArPix data taking} & At this moment, ask Patrick. Will have instructions later \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Stop operation}} \\
+\myCheckBox{Stop data taking} & At this moment, ask Patrick. Will have instructions later \\
+\myCheckBox{LArPix tile powered off} & At this moment, ask Patrick. Will have instructions later \\
+\myCheckBox{HV and current alarms disabled} & Click the alarm button and disable the alarms \\
+\myCheckBox{HV ramped down} & Go to the \texttt{HV Control} panel, and then go to \texttt{HV ramping}.  Set \texttt{Target voltage} to 0 kV, and click \texttt{HV ramping Interlock ON}, disabling the interlock.  Click \texttt{Start}.
+\newline More details in \href{https://drive.google.com/file/d/1cCuX7aAKU5J-GfdMOtygUpqLafvZ-xzg}{RampingHighVoltage.pdf}. \\
+\myCheckBox{High voltage (Cathode voltage) at 0~kV, field shell current (PicoAm Current) at 0~nA} & Check \texttt{Cathode Voltage} and \texttt{PicoAm Current} in the SLArchetto High Voltage Control page, or \texttt{Voltage} and \texttt{Current} in the main monitor \\
+\myCheckBox{HV Status off} & Click \texttt{Switch On}, and the button will become grey and \texttt{HV Status Off} will show \\
+\myCheckBox{V14 and V15 open} & Prepare for boiling LAr \\
+\myCheckBox{Heater interlock off} & Go to SLArchetto main page, turn off the \texttt{Heater ITLK ON} \\
+\myCheckBox{Set up the heater range: 91 -- 95~K} & Go to \texttt{LAr evaporator}, set \texttt{Heater OFF temperature} to 95~K while \texttt{Heater ON temperature} to 91~K \\
+\myCheckBox{Heater on} & Click \texttt{Start} \\
+\myCheckBox{Heat for 24~hours, and heater off} & Go to \texttt{LAr evaporator}, click \texttt{Stop} \\
+\myCheckBox{Heater interlock on} & Go to the main page and turn on the heater interlock \\
+
+\hline
+\hline
+% \caption{}
+% \label{}
+\end{longtable}
+
+\clearpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[angle=90,origin=c,height=7.5in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/PID_SLArchetto_20220213-Model.pdf}
+\caption{P\&ID}
+\end{center}
+\end{figure}
+
+\end{document}
