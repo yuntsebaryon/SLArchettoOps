@@ -11,6 +11,8 @@
 
 % ------------------------------------------------------------------------
 \newcommand{\myCheckBox}{\CheckBox[width=0.8em,bordercolor={0.65 0.79 0.94},height=0.8em]}
+\newcommand{\Hydro}     {H$_2$}
+\newcommand{\dC}        {$^\circ$C}
 \renewcommand{\arraystretch}{1.3}
 
 % ------------------------------------------------------------------------
@@ -25,23 +27,50 @@
 
 %-------------------------------------------------------------------
 
+General steps:
+\begin{enumerate}
+\setlength\itemsep{-0.2em}
+\item Preheat the LAr filter to 175 -- 180{\dC} with Ar gas at 160~slpm ($\sim$6.7~scfm on the flowmeter).  It takes about 3~hours.
+\item Use 1 -- 2\% {\Hydro} balanced with Ar to regenerate the LAr filter.  Keep the temperature between 175 and 225{\dC}.  With the flowrate of 80~slpm (~3.3~scfm on the flowmeter), we expect to use 5 gas bottles, each takes a bit less than an hour.
+\item Cool down the system with ultra high purity Ar gas.
+\end{enumerate}
+
+Time to stop regeneration:
+\begin{itemize}
+\setlength\itemsep{-0.2em}
+\item Humidity plateaus.  Better plateaus at 0\%.
+\item 5 hours of 2\% {\Hydro} gas at 80~slpm (~3.3~scfm on the flowmeter).
+\item Temperature in the LAr filter does not rise anymore.
+\end{itemize}
+
 Notes:
 \begin{itemize}
 \setlength\itemsep{-0.2em}
-\item P\&ID is attached in the end of this list
-\item The weight for the all metal valve, V9, is 4 pounds
-\item The tube upstream V9 is not leak tight (mainly the connections to the flowmeter).  Therefore keep V9 closed when we need to isolate the LAr filter
-\item The gas flow has to be greater than 130~scfm (marked on the flowmeter) to prevent the heater from getting too hot
-\item We should keep the gas flow (Ar or 2\%H$_2$+Ar) between 130 and 400~scfm (label on the flowmeter), but preferably at 400~scfm (the upper range of the flowmeter)
-\item Maintain the catalyst temperature between about $170^\circ$C and
-$225^\circ$C
-\item Do NOT exceed $225^\circ$C, even though $250^\circ$C may be tolerated
-\item If we keep the gas flow at 400~scfm, a gas bottle should be finished in about an hour
+\item V3, V5, V6, V9, V18 isolate the LAr filter.  During the regeneration, V3, V5, and V6 should be always closed.
+\item Control V9 and V18 carefully to avoid compromising the LAr filter; V9 is the gas inlet and V18 is the exhausting valve.
+\item The torque for V9 is 50~inch-pound, 7/8" socket.
+\item The torque for V18 is 21.7 foot-pound, 3/4" socket.  Need different torque wrenches for V9 and V18 typically.
+\item The gas flow has to be greater than 2~scfm (marked on the flowmeter) to prevent the heater from getting too hot.
+\item We should keep the gas flow (Ar or 2\%{\Hydro}+Ar) between 2 and 6.7~scfm (marked on the flowmeter), but preferably at 6.7~scfm.
+\item Maintain the catalyst temperature between about 175{\dC} and
+225{\dC}.
+\item Do NOT exceed 225{\dC}, even though 250{\dC} may be tolerated.
+\item If we keep the gas flow at 400~scfm, a gas bottle should be finished in about an hour.
 \item If seeing smoke or smelling something unusual, shut down the variac power supply (heater) and investigate.
-
 \end{itemize}
-%-------------------------------------------------------------------
 
+%-------------------------------------------------------------------
+% P&ID
+\clearpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[angle=90,origin=c,height=7.5in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/PID_SLArchetto_20220509-Model.pdf}
+\caption{P\&ID}
+\end{center}
+\end{figure}
+
+%-------------------------------------------------------------------
+\clearpage
 \tabcolsep=10pt
 \begin{longtable}{p{0.5\textwidth}p{0.5\textwidth}}
 \hline
@@ -54,72 +83,62 @@ Checklist & What to Do and Detailed Description \\
 \myCheckBox{Tubes connecting the heater and the LAr filter wrapped with aluminum foils for thermal insulation} & \\
 \myCheckBox{V4 connected to the scroll pump} & Prepare to evacuate the vacuum vessel \\
 \myCheckBox{V4 open, scroll pump on} & Evacuate the vacuum vessel \\
-\myCheckBox{V3, V5, V6, V7, V8, V9, V10, V11, V12 closed} & \\
+\myCheckBox{V3, V5, V6, V7, V8, V9, V10, V11, V12, v18 closed} & \\
 \myCheckBox{Exhausting gas line connected and humidity meter hooked} & \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Preheating with Ar gas}} \\
-\myCheckBox{V3, V5, V6, V7, V8, V9, V10, V11, V12 closed} & \\
+\myCheckBox{V3, V5, V6, V7, V8, V9, V10, V11, V12, V18 closed} & \\
 \myCheckBox{PG6 at 0 psi} & \\
 \myCheckBox{Variac power supply off.  Voltage set at 0} & \\
 \myCheckBox{Heater plugged in to the variac power supply} & \\
 \myCheckBox{Ar gas bottle connected to Reg1 and V7/V8 line} & \\
 \myCheckBox{GMV1 opened, Reg1 increased, V7 opened, air purged} & Purge the air in the connection tube \\
 \myCheckBox{V7 closed} & Finish purging \\
-\myCheckBox{V8, V9, V6 opened} & \\
-\myCheckBox{PG3 $>$~2 psig, V10 opened} & \\
-\myCheckBox{Gas flow $>$~130~scfh, stable} & \\
+\myCheckBox{V8, V9 opened} & \\
+\myCheckBox{PG3 at 5 -- 10~psig, V18 opened} & \\
+\myCheckBox{Gas flow $\sim$6.7~scfm, stable} & \\
 \myCheckBox{Variac power supply on, increase the voltage} & Turn on the heater \\
-\myCheckBox{Humidity plateaued for $>$~10~minutes} & Molecular sieves regenerated \\
+\myCheckBox{Humidity plateaued at 0\% for $>$~10~minutes} & Molecular sieves regenerated \\
 \myCheckBox{Preheated for $>$~2~hours} & \\
+\myCheckBox{TC0, 1, 2, 3 at 175 -- 180{\dC}} & \\
 \myCheckBox{Variac power supply off.  Voltage set at 0} & Turn off the heater \\
-\myCheckBox{V8, V9, V10 closed} & \\
+\myCheckBox{V8, V9, V18 closed} & \\
 \myCheckBox{GMV1 and Reg1 closed} & \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Regenerating copper sieves}} \\
-\myCheckBox{Ar+2\%H$_2$ gas bottle connected to Reg1 and V7/V8 line} & \\
+\myCheckBox{Ar+2\%{\Hydro} gas bottle connected to Reg1 and V7/V8 line} & \\
 \myCheckBox{GMV1 opened, Reg1 increased, V7 opened, air purged} & Purge the air in the connection tube \\
 \myCheckBox{V7 closed} & Finish purging \\
-\myCheckBox{V8, V9, V6 opened} & \\
-\myCheckBox{PG3 $>$~2 psig, V10 opened} & \\
-\myCheckBox{Gas flow between 50 and 160~slpm (Ar), or between 130 and 400~scfh (labeled as Air).  Preferrably at 400~scfh Air} & \\
+\myCheckBox{V8, V9 opened} & \\
+\myCheckBox{PG3 at 5 -- 10~psig, V18 opened} & \\
+\myCheckBox{Gas flow between 50 and 160~slpm (Ar), or between 2.2 and 6.7~scfm (marked as Air).  Preferably at 3.5~scfm Air} & \\
 \myCheckBox{Variac power supply on, increase the voltage} & Turn on the heater \\
-\myCheckBox{Should the temperature exceed $225^\circ$C anywhere in the bed, switch to H$_2$-free gas until the hot zone cools back down to 200 -- $210^\circ$C, then resume feeding the H$_2$ gas mixture} & \\
+\myCheckBox{Should the temperature exceed 225{\dC} anywhere in the bed, switch to {\Hydro}-free gas until the hot zone cools back down to 200 -- 210{\dC}, then resume feeding the {\Hydro} gas mixture} & \\
 \myCheckBox{The temperature of the all catalyst bed is stable or subsiding} & \\
-\myCheckBox{Humidity plateaued for $>$~10~minutes} & Copper sieves regenerated \\
+\myCheckBox{Humidity plateaued at 0\% for $>$~10~minutes} & Copper sieves regenerated \\
 \myCheckBox{Variac power supply off.  Voltage set at 0} & Turn off the heater \\
-\myCheckBox{V6, V8, V9, V10 closed} & \\
+\myCheckBox{V8, V9, V18 closed} & \\
 \myCheckBox{GMV1 and Reg1 closed} & \\
-\myCheckBox{Humidity meter unmounted} & \\
 
 
 \hline
-\multicolumn{2}{l}{\textbf{Completion}} \\
-\myCheckBox{V3, V5, V6, V9 closed} & Prepare to evacuate the LAr filter \\
-\myCheckBox{Scroll pump connected to V5} & \\
-\myCheckBox{V5 open, scroll pump on} & \\
-\myCheckBox{PG3 at 0~psig} & \\
-\myCheckBox{V5 closed} & \\
-\myCheckBox{V6, V10, V11, V12 closed} & Prepare to evacuate the piece of the plumbing system \\
-\myCheckBox{Scroll pump connected to V10} & \\
-\myCheckBox{V10 open, scroll pump on} & \\
-\myCheckBox{Pumping 10 minutes} & \\
-\myCheckBox{V10 closed} & \\
-\myCheckBox{V3, V5, V9 closed} & \\
-\myCheckBox{V17 closed, turbo pump off?} & \\
-\myCheckBox{V12, V6 open?} & \\
+\multicolumn{2}{l}{\textbf{Completion; cooling down}} \\
+\myCheckBox{Variac power supply off.  Voltage set at 55~V} & \\
+\myCheckBox{Ultra high purity Ar gas bottle connected to Reg1 and V7/V8 line} & \\
+\myCheckBox{GMV1 opened, Reg1 increased, V7 opened, air purged} & Purge the air in the connection tube \\
+\myCheckBox{V7 closed} & Finish purging \\
+\myCheckBox{V8, V9 opened} & \\
+\myCheckBox{PG3 at 5 -- 10~psig, V18 opened} & \\
+\myCheckBox{Gas flow $\sim$6.7~scfm, stable} & \\
+\myCheckBox{Variac power supply on, decrease the voltage} & Turn on the heater \\
+\myCheckBox{Variac power supply off.  Voltage set at 0} & Turn off the heater \\
+\myCheckBox{V8, V9, V18 closed} & \\
+\myCheckBox{GMV1 and Reg1 closed} & \\
 
 \hline
 \hline
 \end{longtable}
-
-\clearpage
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[angle=90,origin=c,height=7.5in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/PID_SLArchetto_20220406-Model.pdf}
-\caption{P\&ID}
-\end{center}
-\end{figure}
 
 \end{document}
