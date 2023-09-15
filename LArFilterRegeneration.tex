@@ -30,16 +30,16 @@
 General steps:
 \begin{enumerate}
 \setlength\itemsep{-0.2em}
-\item Preheat the LAr filter to 175 -- 180{\dC} with Ar gas at 160~slpm ($\sim$6.7~scfm on the flowmeter).  It takes about 3~hours.
-\item Use 1 -- 2\% {\Hydro} balanced with Ar to regenerate the LAr filter.  Keep the temperature between 175 and 225{\dC}.  With the flowrate of 80~slpm (~3.3~scfm on the flowmeter), we expect to use 5 gas bottles, each takes a bit less than an hour.
-\item Cool down the system with ultra high purity Ar gas.
+\item Preheat the LAr filter to 175 -- 180{\dC} with ultra high purity Ar gas at 160~slpm ($\sim$6.7~scfm on the flowmeter).  It takes about 3~hours.  You can start with 55~V and bump it to 100 -- 110~V after 20~minutes.  You can stop preheating when the bottom thermocouple reaches $\sim$155{\dC}.
+\item Use 1 -- 2\% {\Hydro} balanced with Ar to regenerate the LAr filter.  Keep the temperature between 175 and 225{\dC}.  With the flowrate of 80~slpm ($\sim$3.3~scfm on the flowmeter), we expect to use 5 gas bottles, each takes a bit less than an hour.  You can keep the voltage between 55 -- 75~V.
+\item Cool down the system with ultra high purity Ar gas.  This take $\sim$80~minutes and you will sort of uniformly ramp down the voltage from 65~V to 20~V.
 \end{enumerate}
 
 Time to stop regeneration:
 \begin{itemize}
 \setlength\itemsep{-0.2em}
 \item Humidity plateaus.  Better plateaus at 0\%.
-\item 5 hours of 2\% {\Hydro} gas at 80~slpm (~3.3~scfm on the flowmeter).
+\item 5 hours of 2\% {\Hydro} gas at 80~slpm ($\sim$3.3~scfm on the flowmeter).
 \item Temperature in the LAr filter does not rise anymore.
 \end{itemize}
 
@@ -47,16 +47,18 @@ Notes:
 \begin{itemize}
 \setlength\itemsep{-0.2em}
 \item All the doors of the LNTF hut have to be open, the intake fan has to be turned on, and oxygen deficiency sensor and monitor (ODM) have to be checked.
-\item V3, V5, V6, V9, V18 isolate the LAr filter.  During the regeneration, V3, V5, and V6 should be always closed.
+\item V3, V5, V6, V16/V17, V18/V19 isolate the LAr filter.  During the regeneration, V3, V5, and V6 should be always closed.  V17 and V18 are metal valves, which we will just finger tight all the time.  We will rely on V16 and V19 to isolate the LAr filter, instead of V17 and V18.
+\item The gas flows from the gas bottle, Reg1/2, V25/V26, V23, V16, HT1, V17, into the LAr filter, and vents from V18, V19, FC1.
+\item The vacuum vessel surrounding the LAr filter should be evacuated from V4 all the time.  The pressure can be read from PG6.
 \item Control V9 and V18 carefully to avoid compromising the LAr filter; V9 is the gas inlet and V18 is the exhausting valve.
-\item The torque for V9 is 50~inch-pound, 7/8" socket.
+\item The torque for V9 is 25~foot-pound.
 \item The torque for V18 is 21.7 foot-pound, 3/4" socket.  Need different torque wrenches for V9 and V18 typically.
 \item The gas flow has to be greater than 2~scfm (marked on the flowmeter) to prevent the heater from getting too hot.
-\item We should keep the gas flow (Ar or 2\%{\Hydro}+Ar) between 2 and 6.7~scfm (marked on the flowmeter), but preferably at 6.7~scfm.
+\item We should always keep the gas flow (Ar or 2\%{\Hydro}+Ar) between 2 and 6.7~scfm (marked on the flowmeter).
 \item Maintain the catalyst temperature between about 175{\dC} and
 225{\dC}.
 \item Do NOT exceed 225{\dC}, even though 250{\dC} may be tolerated.
-\item If we keep the gas flow at 6.7~scfm Air, a gas bottle should be finished in about an hour.
+% \item If we keep the gas flow at 6.7~scfm Air, a gas bottle should be finished in about an hour.
 \item If seeing smoke or smelling something unusual, shut down the variac power supply (heater) and investigate.
 \end{itemize}
 
@@ -65,7 +67,7 @@ Notes:
 \clearpage
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[angle=90,origin=c,height=7.5in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/PID_SLArchetto_20220509-Model.pdf}
+\includegraphics[angle=90,origin=c,height=7.5in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/PID_SLArchetto_v8.2-Model.pdf}
 \caption{P\&ID}
 \end{center}
 \end{figure}
@@ -81,7 +83,8 @@ Checklist & What to Do and Detailed Description \\
 \multicolumn{2}{l}{\textbf{Preparation}} \\
 \myCheckBox{3 bottle of ultra high purity Ar gas (TBC)} & \\
 \myCheckBox{5 bottles of Ar+2\%H$_2$ gas (TBC)} & \\
-\myCheckBox{Tubes connecting the heater and the LAr filter wrapped with aluminum foils for thermal insulation} & \\
+\myCheckBox{Remove the cold insulation foam from the tubes close to the LAr filter regeneration line} & \\
+\myCheckBox{Heater, tubes connecting the heater and the LAr filter wrapped with a few layers of aluminum foils for thermal insulation} & \\
 \myCheckBox{V4 connected to the scroll pump} & Prepare to evacuate the vacuum vessel \\
 \myCheckBox{V4 open, scroll pump on} & Evacuate the vacuum vessel \\
 \myCheckBox{V3, V5, V6, V7, V8, V9, V10, V11, V12, v18 closed} & \\
@@ -100,12 +103,12 @@ Checklist & What to Do and Detailed Description \\
 \myCheckBox{GMV1 opened, Reg1 increased, V7 opened, air purged} & Purge the air in the connection tube \\
 \myCheckBox{V7 closed} & Finish purging \\
 \myCheckBox{V8, V9 opened} & \\
-\myCheckBox{PG3 at 5 -- 10~psig, V18 opened} & \\
+\myCheckBox{PG3 at 5 -- 15~psig, V18 opened} & \\
 \myCheckBox{Gas flow $\sim$6.7~scfm, stable} & \\
 \myCheckBox{Variac power supply on, increase the voltage} & Turn on the heater \\
 \myCheckBox{Humidity plateaued at 0\% for $>$~10~minutes} & Molecular sieves regenerated \\
 \myCheckBox{Preheated for $>$~2~hours} & \\
-\myCheckBox{TC0, 1, 2, 3 at 175 -- 180{\dC}} & \\
+\myCheckBox{TC0, 1, 2, 3 at 175 -- 180{\dC}, or TC3 $>155${\dC}} & \\
 \myCheckBox{Variac power supply off.  Voltage set at 0} & Turn off the heater \\
 \myCheckBox{V8, V9, V18 closed} & \\
 \myCheckBox{GMV1 and Reg1 closed} & \\
@@ -116,7 +119,7 @@ Checklist & What to Do and Detailed Description \\
 \myCheckBox{GMV1 opened, Reg1 increased, V7 opened, air purged} & Purge the air in the connection tube \\
 \myCheckBox{V7 closed} & Finish purging \\
 \myCheckBox{V8, V9 opened} & \\
-\myCheckBox{PG3 at 5 -- 10~psig, V18 opened} & \\
+\myCheckBox{PG3 at 5 -- 15~psig, V18 opened} & \\
 \myCheckBox{Gas flow between 50 and 160~slpm (Ar), or between 2.2 and 6.7~scfm (marked as Air).  Preferably at 3.5~scfm Air} & \\
 \myCheckBox{Variac power supply on, increase the voltage} & Turn on the heater \\
 \myCheckBox{Should the temperature exceed 225{\dC} anywhere in the bed, switch to {\Hydro}-free gas until the hot zone cools back down to 200 -- 210{\dC}, then resume feeding the {\Hydro} gas mixture} & \\
@@ -129,7 +132,7 @@ Checklist & What to Do and Detailed Description \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Completion; cooling down}} \\
-\myCheckBox{Variac power supply off.  Voltage set at 55~V} & \\
+\myCheckBox{Variac power supply off.  Voltage set at 65~V} & \\
 \myCheckBox{Ultra high purity Ar gas bottle connected to Reg1 and V7/V8 line} & \\
 \myCheckBox{GMV1 opened, Reg1 increased, V7 opened, air purged} & Purge the air in the connection tube \\
 \myCheckBox{V7 closed} & Finish purging \\
