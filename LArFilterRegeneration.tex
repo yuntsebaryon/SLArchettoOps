@@ -88,7 +88,7 @@ greater than the atmosphere so that the air won't diffuse in, but not too overpr
 \item Maintain the catalyst temperature between about 175{\dC} and 225{\dC}.
 \item Do NOT exceed 225{\dC}, even though 250{\dC} may be tolerated.
 % \item If we keep the gas flow at 6.7~scfm Air, a gas cylinders should be finished in about an hour.
-\item The torque for V17 is 25~foot-pound.
+\item The torque for V17 is 4~foot-pound.
 \item The torque for V18 is 21.7 foot-pound, 3/4" socket.  Need different torque wrenches for V17 and V18 typically.
 \end{itemize}
 
@@ -97,12 +97,32 @@ greater than the atmosphere so that the air won't diffuse in, but not too overpr
 \clearpage
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[angle=90,origin=c,height=7.5in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/PID_SLArchetto_v8.3-Model.pdf}
+\includegraphics[angle=90,origin=c,height=7.3in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/PIDv8.3.pdf}
 \caption{P\&ID}
 \end{center}
 \end{figure}
-
 %-------------------------------------------------------------------
+%-------------------------------------------------------------------
+% Gas flow: Ar
+\clearpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[angle=90,origin=c,height=7.3in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/RegenerationAr_PIDv8.3.pdf}
+\caption{Gas flow direction: Ar gas}
+\end{center}
+\end{figure}
+%-------------------------------------------------------------------
+%-------------------------------------------------------------------
+% Gas flow: H2+Ar
+\clearpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[angle=90,origin=c,height=7.3in]{/Users/yuntse/Documents/DUNE/SLArchetto/PID/RegenerationH2_PIDv8.3.pdf}
+\caption{Gas flow direction: 2\%{\Hydro}+Ar gas}
+\end{center}
+\end{figure}
+%-------------------------------------------------------------------
+
 \clearpage
 \tabcolsep=10pt
 \begin{longtable}{p{0.5\textwidth}p{0.5\textwidth}}
@@ -112,6 +132,7 @@ Checklist & What to Do and Detailed Description \\
 \hline
 \multicolumn{2}{l}{\textbf{Readiness -- Before the Day}} \\
 \myCheckBox{1 ultra high purity LAr dewar} & We use the gas port of the LAr because we need a lot amount of gas Ar.\\
+\myCheckBox{The LAr dewar lifted in the LNTF hut} & \\
 \myCheckBox{5 cylinders of Ar+2\%H$_2$ gas} & \\
 \myCheckBox{The GAS port of the ultra high purity LAr dewar connected to Reg3 and then V20} & \\
 \myCheckBox{Two Ar+2\%{\Hydro} gas cylinders connected to Reg1/Reg2 and V24/V25 line} & \\
