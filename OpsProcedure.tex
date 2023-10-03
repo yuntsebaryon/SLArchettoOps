@@ -155,9 +155,12 @@ The ion gauge should be turned off when the pressure is greater than {\color{ora
 Read the display at the Hicube pump \\
 \myCheckBox{Purge the thermosyphon line} & 
 % Open the Tree (botton near home at the top left corner) $\to$ subsystems $\to$ services $\to$ Thermosyphons (we are TSL11).
-Use the DUNE Ignition, make sure no other valves in the thermosyphon system are being controlled.
-\newline Click the number and a side panel will open, click \texttt{purge}.
-\newline Purge will take about 3 minutes \\
+Use thermosyphon page in DUNE Ignition (button in the main menu or on the thermosyphon temperature panel on the left in the monitor page),
+select line TSL11 by clicking on the right thermosyphon or on SLArchetto on the minimap on the top right;
+make sure no other valves in the thermosyphon system are being used (large button on the left grey and saying ``No TS valve open''),
+so that the control panel and the pressure plot under it are visible and enabled.
+\newline Click the top button \texttt{Purge} on the panel.
+\newline Purge will take about 3 minutes; while still running the traffic light shows green, turning back off when over.\\
 
 \hline
 \multicolumn{2}{l}{\textbf{Safety Checks -- Beginning of the Day}} \\
@@ -222,8 +225,8 @@ in which condition the air would come in and contaminate the LAr purity. \\
 % One opens the LAr dewar slightly, and the other monitors PG5 (pressure gauge) or PT1.
 % When the pressure reaches 2.5 psig at PG5 (17.1 psia at PT1), open V15 slightly to prevent the pressure from building up.
 \myCheckBox{Fill with 10L at 10 slpm, and the pressure is less than 5~bar (better less than 3~bar)} & 
-Fill the numbers 10L at 10 slpm, and click \texttt{Add LN$_2$}.  Click on the pressure graph below 
-the value of liters to check the pressure  \\
+Fill the numbers 10L (large box) at 10 slpm (smaller under the first), and click \texttt{Add N$_2$}.
+Check the pressure on the purple graph under the controls.\\
 \myCheckBox{LArPix power supply on.  Voltage at 24~V, current limit at 1~A} & \\
 \myCheckBox{LArPix starts taking data when the pressure reaches $\sim$14.6~psia} & 
 Use \texttt{Pedestal Monitor} in the LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial}. \\
@@ -366,9 +369,15 @@ or \texttt{Voltage} and \texttt{Current} in the main monitor \\
 \myCheckBox{HV Status off} & Click \texttt{Switch On}, and the button will become grey and 
 \texttt{HV Status Off} will show \\
 \myCheckBox{V12 and V13 open} & Prepare for boiling LAr \\
-\myCheckBox{Removed liquid nitrogen in the thermosyphon line} & One way to do so is to remove 1000~L of 
-LN$_2$ at 1~slpm.  It will start pumping and never stop.  Click \texttt{Abort} after a couple of hours, 
-close all the valves and turn off the pump if it is not done automatically.  Then click \texttt{Purge}.\\
+\myCheckBox{Removed liquid nitrogen in the thermosyphon line} 
+%% these are instructions before September 2023; still working
+% & One way to do so is to remove 1000~L of 
+% LN$_2$ at 1~slpm.  It will start pumping and never stop.  Click \texttt{Abort} after a couple of hours, 
+% close all the valves and turn off the pump if it is not done automatically.  Then click \texttt{Purge}.\\
+& Set the total amount of $N_2$ found in the thermosyphon drawing, e.g.~60~L, to be removed at 1~slpm (click on \texttt{Remove N$_{2}$}).
+The script will stop after 4 minutes (i.e.~4 times the expected time),
+but when the flux meter at the top of the PID-like drawing shows 0, it's already basically done.
+When it's done, click on \texttt{Purge}.\\
 \myCheckBox{Heater interlock off} & 
 Go to SLArchetto main page, turn off the \texttt{Heater ITLK ON} \\
 \myCheckBox{Set up the heater range: 91 -- 95~K} & Go to \texttt{LAr evaporator}, 
