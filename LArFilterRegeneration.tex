@@ -37,8 +37,8 @@ You can stop preheating when the bottom thermocouple reaches $\sim$145{\dC}.
 Currently we are using the ultra high purity Ar from the gas port of the LAr dewar, because a huge amount of gas Ar
 is needed.
 \item Use 1 -- 2\% {\Hydro} balanced with Ar to regenerate the LAr filter.  Keep the temperature between 175 and 225{\dC}.  
-With the flowrate of 80~slpm ($\sim$3.3~scfm on the flowmeter), we expect to use 5 gas cylinders, 
-each takes about an hour.  You can keep the voltage of the gas heater between 55 -- 75~V (at the variac).
+With the flow rate of 80~slpm ($\sim$3.3~scfm on the flowmeter), we expect to use 5 gas cylinders, 
+each takes about 1.25 hours.  You can keep the voltage of the gas heater between 55 -- 75~V (at the variac).
 \item Cool down the system with ultra high purity Ar gas.  
 This take $\sim$80~minutes and you will sort of uniformly ramp down the voltage of the gas heater from 65~V to 20~V.
 \end{enumerate}
@@ -60,11 +60,16 @@ This take $\sim$80~minutes and you will sort of uniformly ramp down the voltage 
 \item The intake fan has to be turned on.
 \item The oxygen deficiency sensor and monitor (ODM) have to be checked.
 \item The pressure in the LAr filter is shown on PG3.
-\item The gas flow has to be greater than 2~scfm (marked on the flowmeter) to prevent the heater from getting too hot.
-\item The gas heater power cord is plugged into the heater engineering control (EEIP approved), which shut down the power if the temperature
+\item The gas flow has to be greater than 2~scfm (marked on the flowmeter) to prevent the heater 
+from getting too hot.
+\item The gas heater power cord is plugged into the heater engineering control (EEIP approved), 
+which shut down the power if the temperature
 of the gas heater exceeds the preset value, 355{\dC}.  
 The shut-down temperature can be set at the detector control GUI (Ignition),
 and the gas heater temperature is displayed in the same page.
+\item When sealed, the pressure of the LAr filter and gas pipe should not exceed 150~psig.
+The pressure relief valve on the LAr filter will open at $\sim$150~psig,
+while the pressure relief valves along the pipe will open at 150 -- 200~psig.
 \item If seeing smoke or smelling something unusual, shut down the variac power supply (heater) and investigate.
 \end{itemize}
 
@@ -76,6 +81,9 @@ and the gas heater temperature is displayed in the same page.
 During the regeneration, V3, V5, and V6 should be always closed.  
 V17 and V18 are metal valves, which will be always open.
 We will rely on V16 and V19 to isolate the LAr filter, instead of V17 and V18.
+\item V16, V20, V21, V22, V24, V25 are diaphrame valves and are not adjustable.
+When opening them, make a full open.
+Use Reg1/2/3 and V19 to control the flow rate.
 \item The Ar gas flows from the gas port of the LAr dewar, Reg3, V20, V16, HT1, V17, into the LAr filter, 
 and vents from V18, V19, FC1, outside the LNTF hut along the venting pipe, as shown in 
 Fig.~\ref{fig:ArFlow}.
@@ -87,16 +95,27 @@ as shown in Fig.~\ref{fig:H2Flow}.
 The pressure can be read from PG6.
 \item Control Reg1/2/3 and V19 carefully to avoid compromising the LAr filter.  We want the LAr filter to have pressure 
 greater than the atmosphere so that the air won't diffuse in, but not too overpressurized.  
-20 -- 50~psi in the LAr filter is good.
+16 -- 35~psi in the LAr filter is good.
 % {\color{orange} We would like to get rid of V17 and V18, but if they are needed in this process, please follow up.}
-\item The pressure at the outlet of Reg3 and in the LAr filter should be very close to each other.
-\item The pressure at the outlet of Reg1/2 is a few psi higher then the pressure in the LAr filter.
+\item The pressure at the outlet of Reg3 and in the LAr filter should be very close to each other,
+because the pressure drop along the inlet line is small.
+\item The pressure at the outlet of Reg1/2 is a few psi higher then the pressure in the LAr filter,
+which corresponds to the pressure drop along the inlet line. 
 \item We should always keep the gas flow (Ar or 2\%{\Hydro}+Ar) between 2 and 6.7~scfm (marked on the flowmeter).
 \item Maintain the catalyst temperature between about 175{\dC} and 225{\dC}.
 \item Do NOT exceed 225{\dC}, even though 250{\dC} may be tolerated.
 % \item If we keep the gas flow at 6.7~scfm Air, a gas cylinders should be finished in about an hour.
 \item The temperature of the hot gas and heater body may increase while the voltage from the variac power supply
-is fixed.  That happens when the gas flow decreases.  We can adjust Reg1/2 to cope with this situation.
+is fixed.  It is owing to the drop of the gas flow.  We can adjust Reg1/2 to cope with this situation.
+This happens all the time with the 2\%{\Hydro}+Ar cylinders and we should keep an eye on these parameters.
+\item The humidity sensor operates between -20{\dC} and 50{\dC}.
+With the Ar flow rate of 160~slpm ($\sim$6.7~scfm on the flowmeter), the hot Ar gas likely still has higher
+temperature than 50{\dC} when it arrives the humidity sensor.
+The humidity sensor will show 0\% all the time in this case.
+It will start functioning when the temperature drops.
+We can turn off the gas heater or lower the flow rate to obtain colder gas when we need to
+check the humidity.
+(Modification is being planned.)
 \item The torque for V17 is 4~foot-pound.
 \item The torque for V18 is 21.7 foot-pound, 3/4" socket.  Need different torque wrenches for V17 and V18 typically.
 \end{itemize}
@@ -187,7 +206,7 @@ into the variac power supply} & \\
 \myCheckBox{V16 opened} & \\
 \myCheckBox{GMV3 opened, Reg3 increased} & Start flowing Ar gas to the LAr filter\\
 \myCheckBox{PG3 at 5 -- 15~psig (20 -- 30~psi), V19 opened} & \\
-\myCheckBox{Gas flow $\sim$6.7~scfm, PG3 at 20 -- 50~psi, stable} & \\
+\myCheckBox{Gas flow $\sim$6.7~scfm, PG3 at 20 -- 35~psi, stable} & \\
 \myCheckBox{Variac power supply on, the voltage increased to 55V} & Turn on the heater \\
 \myCheckBox{Variac power supply set to 100 -- 110V} & \\
 \myCheckBox{Humidity plateaued at 0.02\% for $>$~10~minutes} & Molecular sieves regenerated \\
@@ -210,12 +229,12 @@ Purge the air in the connection tube until V22 for the first time \\
 \myCheckBox{GMV1 opened, Reg1 increased}
 \myCheckBox{PG3 at 5 -- 15~psig (20 -- 30~psi), V19 opened} & \\
 \myCheckBox{Gas flow between 50 and 160~slpm (Ar), or between 2.2 and 6.7~scfm (marked as Air).  Preferably at 3.5~scfm Air.
-PG3 (LAr filter) at 20 -- 40~psi.  The outlet of Reg1/2 at 20 -- 40~psi.} & Usually V19 is not widely open. \\
+PG3 (LAr filter) at 20 -- 35~psi.  The outlet of Reg1/2 at 20 -- 40~psi.} & Usually V19 is not widely open. \\
 \myCheckBox{Variac power supply on, the voltage increased to 55 -- 75~V} & Turn on the heater \\
 \myCheckBox{Temperature in the LAr filter kept at 175 -- 225{\dC}} & 
-Should the temperature exceed 225{\dC} anywhere in the bed, switch to {\Hydro}-free gas and the gas heater power supply 
-until the hot zone cools back down to 200 -- 210{\dC}, then resume feeding the {\Hydro} gas mixture and turn on the gas 
-heater power supply \\
+Should the temperature exceed 225{\dC} anywhere in the bed, switch to {\Hydro}-free gas and turn off the gas heater power 
+supply  until the hot zone cools back down to 200 -- 210{\dC}, then resume feeding the {\Hydro} gas mixture and turn on 
+the gas heater power supply \\
 \multicolumn{2}{l}{\textbf{Gas cylinder transition}} \\
 \myCheckBox{The other gas cylinder (GCYL2) connected before the operating one (GCYL1) finishes} & or vice versa \\
 \myCheckBox{Purge the connection line: GMV2 open, Reg2 open, V27 open} & Purge the air until V25.  Can also evacuate 
