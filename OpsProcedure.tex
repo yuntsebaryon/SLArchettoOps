@@ -32,8 +32,10 @@
 \setlength\itemsep{-0.2em}
 \item Precool the LAr filter first.  During the precooling, vent to the venting line, 
 but not to the SLArchetto vessel.  This takes about 1 hour and we stop precooling when the
-temperature in the LAr filter is {\color{orange}? {\dC}}.
+temperature in the LAr filter is -100{\dC} (the lower limit of the temperature readout).
 \item Fill the SLArchetto vessel, monitor the LArPix noise during the filling.
+Stop LAr filling when RTD4 is submerged in LAr and RTD5 is about to be submerged, and/or
+the liquid level sensor is at 65~cm.
 \item After LAr reaches the desired level, take pedestal data with LArPix.
 \item Turn off LArPix and ramp up the high voltage.
 \item Take pedestal data, set the trigger threshold of LArPix.  Start data taking.
@@ -56,13 +58,22 @@ The pressure is shown on PG5 on top of the vessel and PT1 in the detector contro
 \setlength\itemsep{-0.2em}
 \item V3, V5, V6, V16/V17, V18/V19 isolate the LAr filter.
 During the LAr filling, V5, V16, V19 should be always closed.
-V17 and V18 are metal valves, which will be always open in this run.  We are learning whether we can get rid of them.
+V17 and V18 are metal valves, which will be always open in this run.
 We will rely on V16 and V19 to isolate the LAr filter, instead of V17 and V18.
+\item The ion gauge (PG1) has to be turned off before LAr filling by unplugging the cable.
+Otherwise it will be damaged (which costs \$1500).
 \item The vacuum vessel surrounding the LAr filter should be evacuated from V4 all the time during LAr filling.  
 The pressure can be read from PG6.
 \item Purge the venting line of SLArchetto with ultra high purity Ar gas when V12 and V13 are open.
-If using a gas cylinder outside the LNTF hut, the gas pressure at the outline of the regulator should be 
-{\color{orange}20~psig}.
+At least at the beginning of filling, dewar trasition, and the end of filling.
+    \begin{itemize}
+        \item If using a gas cylinder outside the LNTF hut, the gas pressure at the outline of the regulator 
+        should be {\color{orange}20~psig (TBC)}.
+        \item You can use one LAr dewar to fill and the Ar gas (from the gas port) of another LAr dewar to purge.
+        The LAr and Ar gas have to come from different dewars.
+        In this case, also keep monitoring the usage of LAr so that we don't run out of LAr before getting to
+        the desired LAr level.
+    \end{itemize}
 \item V9, V11, V12 (V13, V14, V15) isolate the SLArchetto vessel.  
 V11, V14, V15 should be always closed, while V12 should be always open until LAr filling is completed.  
 Make sure you know where V12 is; \textbf{the burst disk will rupture if V12 is closed.}
@@ -70,21 +81,33 @@ Make sure you know where V12 is; \textbf{the burst disk will rupture if V12 is c
 \item Cool down the LAr filter by filling it with LAr from V3 and venting the gas Ar from V6 and V7.  
 Monitor the temperature from the ``LAr Filter Regeneration'' tab.  This takes about 1~hour.
 \item When starting filling LAr in SLArchetto (at the room temperature), all the LAr will evaporate.  
-This is the time that pressure will build up in the system.  
+This is the time that pressure will rapidly build up in the system.  
 Carefully control V13 to release the pressure.
 \item Keep the pressure in the SLArchetto vessel at 2 -- 4~psig (16.5 -- 18.5~psia).
 The pressure can be read from PG5 on the top of SLArchetto and from PT1 from the Iginition GUI.
-\item Keep the pressure in the LAr filter at 50~psig.
+\item Keep the pressure in the LAr filter at {\color{orange}20~psig (TBC)}.
 The pressure can be read from PG3.
+\item We would like to control the filling so that it takes $\sim$5~hours to fill SLArchetto.
+The desired liquid level is 65~cm on the level sensor.
+Note that the filling rate is not linear because more LAr evacuates at the beginning.
 \item The torque for V3 is 25 foot-pound.
 \item The torque for V6 is 21.7 foot-pound, 3/4" socket.
-\item Load 65~L of nitrogen in the thermosyphon line 11 (TSL11), 
-monitor the pressure in SLArchetto and adjust accordingly.
+\item Load $\sim$55~L of nitrogen in the thermosyphon line 11 (TSL11).
+    \begin{itemize}
+        \item Start loading nitrogen after starting purging the venting line.
+        \item Start with 10~L nitrogen at 5~slpm.  Wait for the pressure in TSL11 to stablize.
+        \item Then load 5~L nitrogen at 5~slpm each time.  Better to wait longer between each load.
+        \item After finishing LAr filling, monitor the pressure in SLArchetto and adjust the nitrogen 
+        amount accordingly.
+    \end{itemize}
 \item Take LArPix data during filling (but after the vessel is at $\ge$ atmospheric pressure).
 \item Turn off the LArPix tile while ramping up the high voltage.
 \item Once SLArchetto is filled, close V12, V13, V9.
 \item RTD2 (the bottom one) is not available in this run, but it is repetitive to RTD1.
 \item RTD3 in this run is connected to Cryocon channel B.
+\item V9, V12 and V13 usually freeze during LAr filling, wait some time and close them again.
+\item The venting line vibrates during LAr filling and possibly during purging and makes noise.
+The flowmeter vibrates as well.
 \end{itemize}
 
 %-------------------------------------------------------------------
@@ -125,6 +148,7 @@ for gas Ar purging.}
 Checklist & What to Do and Detailed Description \\
 \hline
 \multicolumn{2}{l}{\textbf{Readiness}} \\
+\myCheckBox{3 ultra high purity LAr dewars lifted in the LNTF hut} & \\
 \myCheckBox{TPC grounding checked} & \\
 \myCheckBox{LArPix tests in the room temperature at atmosphere} & \\
 \myCheckBox{Vessel closed and tightened} & \\
@@ -145,6 +169,8 @@ V28 is connected on the thermosyphon evaporator, and is not shown in the current
 \myCheckBox{Wrap the tubes along the LAr path with foam} & \\
 % \myCheckBox{V6, V11, V12 closed, V10 connected to a turbo pump and opened} & Evacuate the tube between V6 and V11/V12 with a turbo pump \\
 \myCheckBox{P1 connected to V4.  V4 opened and P1 on} & Evacuate the vacuum vessel insulating the LAr filter \\
+\myCheckBox{Detector control (Ignition) set up} & 
+Instruction: \url{https://docs.google.com/document/d/17dsjQEY3hDOYmxKYikNqeVWEoB0qyarqYrbijNPSBfg/edit?usp=sharing} \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Prepare LAr filling}} \\
@@ -230,18 +256,19 @@ Check the pressure on the purple graph under the controls.\\
 \myCheckBox{LArPix power supply on.  Voltage at 24~V, current limit at 1~A} & \\
 \myCheckBox{LArPix starts taking data when the pressure reaches $\sim$14.6~psia} & 
 Use \texttt{Pedestal Monitor} in the LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial}. \\
-\myCheckBox{Equilibrium reached and $\sim$50~psig at PG3 (pressure gauge on top of the LAr filter)} & \\
+\myCheckBox{Equilibrium reached and {\color{orange}$\sim$20~psig (TBC)} at PG3 (pressure gauge on top of the LAr filter)} & \\
 \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 15~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 20~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 25~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 30~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 35~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 40~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 45~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 50~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 55~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 60~L} & \\
-\myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 65~L} & \\
+\myCheckBox{Repeat slowly until reaching 55~L nitrogen in TSL11} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 20~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 25~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 30~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 35~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 40~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 45~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 50~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 55~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 60~L} & \\
+% \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 65~L} & \\
 % \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 70~L} & \\
 % \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 75~L} & \\
 % \myCheckBox{During fill when the liquid level in the open mouth vessel goes down, open V1 and increase flow to refill} & \\
@@ -347,12 +374,12 @@ Warning range: 14.95 -- 15.05~kV; Alert range: 14.9 -- 15.1~kV; Alarm range: 14.
 \myCheckBox{Enable the warning, alert, and alarm for the current} & 
 Click the alarm button.  Warning range: -20,000 -- 0~nA; Alert range: -25,000 -- 0~nA; 
 Alarm range: -30,000 -- 0~nA \\
-\myCheckBox{HV ramping Interlock OFF} & \\
+\myCheckBox{HV ramping Interlock ON} & \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Start data taking}} \\
-\myCheckBox{LArPix tile powered on} & At this moment, ask Patrick. Will have instructions later \\
-\myCheckBox{LArPix data taking} & At this moment, ask Patrick. Will have instructions later \\
+\myCheckBox{LArPix pedestal data taking} & LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial} \\
+\myCheckBox{LArPix data taking} & LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial} \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Stop operation}} \\
@@ -374,9 +401,9 @@ or \texttt{Voltage} and \texttt{Current} in the main monitor \\
 % & One way to do so is to remove 1000~L of 
 % LN$_2$ at 1~slpm.  It will start pumping and never stop.  Click \texttt{Abort} after a couple of hours, 
 % close all the valves and turn off the pump if it is not done automatically.  Then click \texttt{Purge}.\\
-& Set the total amount of $N_2$ found in the thermosyphon drawing, e.g.~60~L, to be removed at 1~slpm (click on \texttt{Remove N$_{2}$}).
-The script will stop after 4 minutes (i.e.~4 times the expected time),
-but when the flux meter at the top of the PID-like drawing shows 0, it's already basically done.
+& Set the total amount of $N_2$ found in the thermosyphon drawing, e.g.~60~L, to be removed at 5~slpm (click on \texttt{Remove N$_{2}$}).
+% The script will stop after 4 minutes (i.e.~4 times the expected time),
+% but when the flux meter at the top of the PID-like drawing shows 0, it's already basically done.
 When it's done, click on \texttt{Purge}.\\
 \myCheckBox{Heater interlock off} & 
 Go to SLArchetto main page, turn off the \texttt{Heater ITLK ON} \\
