@@ -100,6 +100,7 @@ Note that the filling rate is not linear because more LAr evacuates at the begin
         \item After finishing LAr filling, monitor the pressure in SLArchetto and adjust the nitrogen 
         amount accordingly.
     \end{itemize}
+\item LArPix DAQ tutorial can be found at \url{https://github.com/SLACube/slacube-daq-tutorial}.
 \item Take LArPix data during filling (but after the vessel is at $\ge$ atmospheric pressure).
 \item Turn off the LArPix tile while ramping up the high voltage.
 \item Once SLArchetto is filled, close V12, V13, V9.
@@ -150,7 +151,8 @@ Checklist & What to Do and Detailed Description \\
 \multicolumn{2}{l}{\textbf{Readiness}} \\
 \myCheckBox{3 ultra high purity LAr dewars lifted in the LNTF hut} & \\
 \myCheckBox{TPC grounding checked} & \\
-\myCheckBox{LArPix tests in the room temperature at atmosphere} & \\
+\myCheckBox{LArPix tests in the room temperature at atmosphere} & LArPix tutorial at 
+\url{https://github.com/SLACube/slacube-daq-tutorial} \\
 \myCheckBox{Vessel closed and tightened} & \\
 \myCheckBox{Leak checked} & \\
 \myCheckBox{All valves are closed} &  \\
@@ -176,7 +178,7 @@ Instruction: \url{https://docs.google.com/document/d/17dsjQEY3hDOYmxKYikNqeVWEoB
 \multicolumn{2}{l}{\textbf{Prepare LAr filling}} \\
 \myCheckBox{TP1 (turbo pump) pumped for a few days, PT1  (pressure transducer) at absolutely 0 for a few days, 
 ion gauge at $10^{-3}$~mbar} & Read PT1 from \textbf{Pressure} in the Ignition detector monitor.
-The ion gauge should be turned off when the pressure is greater than {\color{orange}? mbar} \\
+The ion gauge should be turned off when the pressure is greater than $6\times 10^{-2}$~mbar \\
 \myCheckBox{The vacuum in the thermosyphon line jacket is at $10^{-3}$ hPa level or below} & 
 Read the display at the Hicube pump \\
 \myCheckBox{Purge the thermosyphon line} & 
@@ -255,7 +257,7 @@ Fill the numbers 10L (large box) at 10 slpm (smaller under the first), and click
 Check the pressure on the purple graph under the controls.\\
 \myCheckBox{LArPix power supply on.  Voltage at 24~V, current limit at 1~A} & \\
 \myCheckBox{LArPix starts taking data when the pressure reaches $\sim$14.6~psia} & 
-Use \texttt{Pedestal Monitor} in the LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial}. \\
+Use \texttt{Pedestal Monitor} in the LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial#pedestal-monitor}. \\
 \myCheckBox{Equilibrium reached and {\color{orange}$\sim$20~psig (TBC)} at PG3 (pressure gauge on top of the LAr filter)} & \\
 \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 15~L} & \\
 \myCheckBox{Repeat slowly until reaching 55~L nitrogen in TSL11} & \\
@@ -320,8 +322,10 @@ in which condition the air would come in and contaminate the LAr purity. \\
 \myCheckBox{Stop purging the SLArchetto venting line (downstream V13)} & \\
 \myCheckBox{Electrical box plugged and switched on} & 
 Toggle up, switch on in case we need heaters \\
+\myCheckBox{Take pedestal run} & LArPix DAQ tutorial for \texttt{Pedestal Test}: 
+\url{https://github.com/SLACube/slacube-daq-tutorial#pedestal-test}. \\
 \myCheckBox{Set the threshold of LArPix channels with HV off} & 
-LArPix DAQ tutorial: \url{https://github.com/SLACube/slacube-daq-tutorial} \\
+LArPix DAQ tutorial for \texttt{Threshold Setting}: \url{https://github.com/SLACube/slacube-daq-tutorial#threshold-setting} \\
 \myCheckBox{Enable the warning, alert, and alarm for the pressure} & 
 Click the alarm button.  Warning range: 14 -- 17.7~psia; Alert range: 14 -- 18.7~psia; 
 Alarm range: 14 -- 19.7~psia \\
@@ -345,8 +349,9 @@ Note: Button turns ``red'' when the fan is on low speed \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Ramp up high voltage}} \\
-\myCheckBox{LArPix data taking stopped} & At this moment, ask Patrick. Will have instructions later \\
-\myCheckBox{LArPix tile powered off} & At this moment, ask Patrick. Will have instructions later \\
+\myCheckBox{LArPix data taking stopped} &  \\
+\myCheckBox{LArPix tile powered off} & Instruction of LArPix \texttt{Power Management}: 
+\url{https://github.com/SLACube/slacube-daq-tutorial#power-management} \\
 \myCheckBox{High voltage power supply on} & \\
 \myCheckBox{PicoAmmeter on, set to the `zcheck` mode} & \\
 \myCheckBox{PicoAmmter DAQ script running and field shell current updating} & Log in
@@ -378,13 +383,20 @@ Alarm range: -30,000 -- 0~nA \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Start data taking}} \\
-\myCheckBox{LArPix pedestal data taking} & LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial} \\
-\myCheckBox{LArPix data taking} & LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial} \\
+\myCheckBox{LArPix self-trigger tests} & LArPix tutorial for \texttt{Self-Trigger Test},
+\url{https://github.com/SLACube/slacube-daq-tutorial#self-trigger-test},
+and \texttt{Threshold Adjustment}, \url{https://github.com/SLACube/slacube-daq-tutorial#threshold-adjustment}. \\
+\myCheckBox{LArPix data taking} & LArPix tutorial for \texttt{Taking Data}, 
+\url{https://github.com/SLACube/slacube-daq-tutorial#taking-data} \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Stop operation}} \\
-\myCheckBox{Stop data taking} & At this moment, ask Patrick. Will have instructions later \\
-\myCheckBox{LArPix tile powered off} & At this moment, ask Patrick. Will have instructions later \\
+\myCheckBox{Stop data taking} & LArPix tutorial for \texttt{Taking Data}: 
+\url{https://github.com/SLACube/slacube-daq-tutorial#taking-data}. \\
+\myCheckBox{LArPix tile powered off} & LArPix tutorial \texttt{Power Management}: 
+\url{https://github.com/SLACube/slacube-daq-tutorial#power-management}. \\
+\myCheckBox{Archive LArPix configurations} & LArPix tutorial \texttt{Archive Run Config}:
+\url{https://github.com/SLACube/slacube-daq-tutorial#archive-run-config}. \\
 \myCheckBox{HV and current alarms disabled} & Click the alarm button and disable the alarms \\
 \myCheckBox{HV ramped down} & Go to the \texttt{HV Control} panel, and then go to \texttt{HV ramping}.  
 Set \texttt{Target voltage} to 0 kV, and click \texttt{HV ramping Interlock ON}, disabling the interlock.  
