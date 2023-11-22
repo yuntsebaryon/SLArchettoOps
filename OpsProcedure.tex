@@ -9,6 +9,8 @@
 \usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
 \usepackage{longtable}
 \usepackage{xcolor}
+\usepackage{lineno}
+\linenumbers
 
 % ------------------------------------------------------------------------
 \newcommand{\myCheckBox}{\CheckBox[width=0.8em,bordercolor={0.65 0.79 0.94},height=0.8em]}
@@ -57,18 +59,18 @@ The pressure is shown on PG5 on top of the vessel and PT1 in the detector contro
 \begin{itemize}
 \setlength\itemsep{-0.2em}
 \item V3, V5, V6, V16/V17, V18/V19 isolate the LAr filter.
-During the LAr filling, V5, V16, V19 should be always closed.
-V17 and V18 are metal valves, which will be always open in this run.
-We will rely on V16 and V19 to isolate the LAr filter, instead of V17 and V18.
+During the LAr filling, V5, V16, V17, V19 should be always closed.
+V17 and V18 are metal valves, and V18 will be always open in this run.
+We close V17 to prevent cold Ar gas from entering the gas heater.
 \item The ion gauge (PG1) has to be turned off before LAr filling by unplugging the cable.
-Otherwise it will be damaged (which costs \$1500).
+Otherwise it will be damaged (which costs \$1500 and 2 -- 3 months of lead time).
 \item The vacuum vessel surrounding the LAr filter should be evacuated from V4 all the time during LAr filling.  
 The pressure can be read from PG6.
 \item Purge the venting line of SLArchetto with ultra high purity Ar gas when V12 and V13 are open.
 At least at the beginning of filling, dewar trasition, and the end of filling.
     \begin{itemize}
         \item If using a gas cylinder outside the LNTF hut, the gas pressure at the outline of the regulator 
-        should be {\color{orange}20~psig (TBC)}.
+        should be 20~psig.
         \item You can use one LAr dewar to fill and the Ar gas (from the gas port) of another LAr dewar to purge.
         The LAr and Ar gas have to come from different dewars.
         In this case, also keep monitoring the usage of LAr so that we don't run out of LAr before getting to
@@ -104,6 +106,7 @@ Note that the filling rate is not linear because more LAr evacuates at the begin
 \item Take LArPix data during filling (but after the vessel is at $\ge$ atmospheric pressure).
 \item Turn off the LArPix tile while ramping up the high voltage.
 \item Once SLArchetto is filled, close V12, V13, V9.
+Open V7 to vent Ar in the LAr filter.
 \item RTD2 (the bottom one) is not available in this run, but it is repetitive to RTD1.
 \item RTD3 in this run is connected to Cryocon channel B.
 \item V9, V12 and V13 usually freeze during LAr filling, wait some time and close them again.
@@ -134,8 +137,10 @@ The flowmeter vibrates as well.
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[angle=90,origin=c,height=7.2in]{fig/LArFilling_PIDv8.3.pdf}
-\caption{LAr flow direction for filling the SLArchetto vessel.  The gas Ar for purging can be injected from the gas port 
-of another LAr dewar, or from an ultra high purity gas argon cylinder.  Do NOT use the same LAr dewar of LAr filling 
+\caption{LAr flow direction for filling the SLArchetto vessel.  
+The gas Ar for purging can be injected from the gas port 
+of another LAr dewar, or from an ultra high purity gas argon cylinder.  
+Do NOT use the same LAr dewar of LAr filling 
 for gas Ar purging.}
 \end{center}
 \end{figure}
@@ -319,8 +324,9 @@ We want to keep the pressure at about 2~psig at PG5 (16.6~psia at PT1) and not t
 We also don’t want the vessel pressure to go below 0~psig at PG5 (14.6~psia at PT1), 
 in which condition the air would come in and contaminate the LAr purity. \\
 \myCheckBox{V28 (LAr dewar), V13 closed} & \\
-\myCheckBox{V1, V3, V6, V9, V12 closed} & \\
-\myCheckBox{All valves closed} & \\
+\myCheckBox{V1, V3, V9, V12 closed} & \\
+\myCheckBox{V6, V7 open} & Vent LAr filter to the venting line. \\
+% \myCheckBox{All valves closed} & \\
 \myCheckBox{Stop purging the SLArchetto venting line (downstream V13)} & \\
 \myCheckBox{Electrical box plugged and switched on} & 
 Toggle up, switch on in case we need heaters \\
@@ -341,7 +347,8 @@ Click the alarm button.  Warning range: 150 -- 163~K; Alert range: 145 -- 170~K 
 \myCheckBox{20-40~minutes for equilibrium} & Check for example, if temperature at RTD~4 is rising, if the pressure is stable \\
 \myCheckBox{Cryoncon A, B, C, D (RTD 1, 2, 3, 4) show $<$~90K at $\sim$16~psia} & \\
 % \myCheckBox{V4, V5, V9, V11, V12 closed.  V6 opened} & Prepare to vent the LAr filter \\
-\myCheckBox{LAr filter vented through V5} & \\
+% \myCheckBox{LAr filter vented through V5} & \\
+\myCheckBox{V6, V7 closed when LAr filter venting completed} & \\
 \myCheckBox{All valves closed} & 
 The valves likely were not closed because of the ice on them.  
 Check them again and completely close them \\

@@ -9,6 +9,8 @@
 \usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
 \usepackage{longtable}
 \usepackage{xcolor}
+\usepackage{lineno}
+\linenumbers
 
 % ------------------------------------------------------------------------
 \newcommand{\myCheckBox}{\CheckBox[width=0.8em,bordercolor={0.65 0.79 0.94},height=0.8em]}
@@ -86,7 +88,10 @@ and investigate.
 \item V3, V5, V6, V16/V17, V18/V19 isolate the LAr filter.  
 During the regeneration, V3, V5, and V6 should be always closed.  
 V17 and V18 are metal valves, which will be always open.
-We will rely on V16 and V19 to isolate the LAr filter, instead of V17 and V18.
+We will rely on V16 and V19 to 
+isolate the LAr filter, instead of V17 and V18.
+However, we close V17 after regeneration to prevent cold Ar from entering
+the gas heater when filling LAr.
 \item V16, V20, V21, V22, V24, V25 are diaphrame valves and are not adjustable.
 When opening them, make a full open.
 Use Reg1/2/3 and V19 to control the flow rate.
@@ -130,7 +135,7 @@ check the humidity.
 (Modification is being planned.)
 \item The LED light on the gas heater control may be broken.  The controlling part 
 should be functional, and you just have to follow the labels for the toggle switch.
-\item The torque for V17 is 4~foot-pound (not needed, just FYI).
+\item The torque for V17 is 4~foot-pound, 3/4" socket.
 \item The torque for V18 is 21.7 foot-pound, 3/4" socket (not needed, just FYI).  
 Need different torque wrenches for V17 and V18 typically.
 \end{itemize}
@@ -307,6 +312,7 @@ connection tube \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Power disconnection, cleanup}} \\
+\myCheckBox{V17 closed} & Use a torque wrench with a 3/4" socket.  The torque is 4 foot-pound. \\
 \myCheckBox{The gas heater power supply disconnected and stored} & \\
 \myCheckBox{The power of the scroll pump disconnected} & \\
 \myCheckBox{Intake fan off} & The emergency button is red \\
