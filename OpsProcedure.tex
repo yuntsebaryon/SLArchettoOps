@@ -58,10 +58,10 @@ The pressure is shown on PG5 on top of the vessel and PT1 in the detector contro
 \underline{Technical notes:}
 \begin{itemize}
 \setlength\itemsep{-0.2em}
-\item V3, V5, V6, V16/V17, V18/V19 isolate the LAr filter.
+\item V3, V5, V7, V9, V16/V17, V19 isolate the LAr filter.
 During the LAr filling, V5, V16, V17, V19 should be always closed.
-V17 and V18 are metal valves, and V18 will be always open in this run.
-We close V17 to prevent cold Ar gas from entering the gas heater.
+V17 is a metal valve, 
+and we close V17 to prevent cold Ar gas from entering the gas heater.
 \item The ion gauge (PG1) has to be turned off before LAr filling by unplugging the cable.
 Otherwise it will be damaged (which costs \$1500 and 2 -- 3 months of lead time).
 \item The vacuum vessel surrounding the LAr filter should be evacuated from V4 all the time during LAr filling.  
@@ -80,7 +80,7 @@ At least at the beginning of filling, dewar trasition, and the end of filling.
 V11, V14, V15 should be always closed, while V12 should be always open until LAr filling is completed.  
 Make sure you know where V12 is; \textbf{the burst disk will rupture if V12 is closed.}
 \item After connecting a new LAr supply dewar, purge the air in the tube from V2.
-\item Cool down the LAr filter by filling it with LAr from V3 and venting the gas Ar from V6 and V7.  
+\item Cool down the LAr purifier by filling it with LAr from V3 and venting the gas Ar from V7.  
 Monitor the temperature from the ``LAr Filter Regeneration'' tab.  This takes about 1~hour.
 \item When starting filling LAr in SLArchetto (at the room temperature), all the LAr will evaporate.  
 This is the time that pressure will rapidly build up in the system.  
@@ -93,14 +93,16 @@ The pressure can be read from PG3.
 The desired liquid level is 65~cm on the level sensor.
 Note that the filling rate is not linear because more LAr evacuates at the beginning.
 \item The torque for V3 is 25 foot-pound.
-\item The torque for V6 is 21.7 foot-pound, 3/4" socket.
+% \item The torque for V6 is 21.7 foot-pound, 3/4" socket.
 \item Load $\sim$55~L of nitrogen in the thermosyphon line 11 (TSL11).
     \begin{itemize}
         \item Start loading nitrogen after starting purging the venting line.
+        \item Use the ``Thermosyphon'' page from the DUNE detector control system (Ignition).
+        \item Use the ``Purge'' bottom to purge the thermosyphoton line.
         \item Start with 10~L nitrogen at 5~slpm.  Wait for the pressure in TSL11 to stablize.
         \item Then load 5~L nitrogen at 5~slpm each time.  Better to wait longer between each load.
         \item After finishing LAr filling, monitor the pressure in SLArchetto and adjust the nitrogen 
-        amount accordingly.
+        amount accordingly (usually adding or removing 1-3~L of nitrogen).
     \end{itemize}
 \item LArPix DAQ tutorial can be found at \url{https://github.com/SLACube/slacube-daq-tutorial}.
 \item Take LArPix data during filling (but after the vessel is at $\ge$ atmospheric pressure).
@@ -118,7 +120,7 @@ The flowmeter vibrates as well.
 \clearpage
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[angle=90,origin=c,height=7.2in]{fig/PIDv8.3.pdf}
+\includegraphics[angle=90,origin=c,height=7.2in]{fig/PIDv8.4.pdf}
 \caption{P\&ID}
 \end{center}
 \end{figure}
@@ -127,7 +129,7 @@ The flowmeter vibrates as well.
 \clearpage
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[angle=90,origin=c,height=7.2in]{fig/PurifierCooling_PIDv8.3.pdf}
+\includegraphics[angle=90,origin=c,height=7.2in]{fig/PurifierCooling_PIDv8.4.pdf}
 \caption{LAr flow direction for cooling the LAr purifier}
 \end{center}
 \end{figure}
@@ -136,7 +138,7 @@ The flowmeter vibrates as well.
 \clearpage
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[angle=90,origin=c,height=7.2in]{fig/LArFilling_PIDv8.3.pdf}
+\includegraphics[angle=90,origin=c,height=7.2in]{fig/LArFilling_PIDv8.4.pdf}
 \caption{LAr flow direction for filling the SLArchetto vessel.  
 The gas Ar for purging can be injected from the gas port 
 of another LAr dewar, or from an ultra high purity gas argon cylinder.  
@@ -169,8 +171,8 @@ for more than 10 minutes} & Read PT1 from \textbf{Pressure} in the Ignition dete
 \myCheckBox{P1 off} & \\
 \myCheckBox{V15 open} & Prepare to start the turbo pump \\
 \myCheckBox{TP1 (turbo pump) on for a few days} &  \\
-\myCheckBox{V28 and the valve on the Hicube pump open} & The Hicube pump is located behind the computer monitor.  
-V28 is connected on the thermosyphon evaporator, and is not shown in the current version of P\&ID \\
+\myCheckBox{V30 and the valve on the Hicube pump open} & The Hicube pump is located behind the computer monitor.  
+V30 is connected on the thermosyphon evaporator, and is not shown in the current version of P\&ID \\
 \myCheckBox{The HiCube pump on} & Pump the thermosyphon vacuum jacket \\
 \myCheckBox{LAr filter regenerated} & See the procedure for LAr filter regeneration \\
 \myCheckBox{Wrap the tubes along the LAr path with foam} & \\
@@ -179,7 +181,7 @@ V28 is connected on the thermosyphon evaporator, and is not shown in the current
 \myCheckBox{Detector control (Ignition) set up} & 
 Instruction: \url{https://docs.google.com/document/d/17dsjQEY3hDOYmxKYikNqeVWEoB0qyarqYrbijNPSBfg/edit?usp=sharing} \\
 \myCheckBox{Torque wrench and handle for V3 in hand} & 25~foot-pound torque wrench and the handle \\
-\myCheckBox{Torque wrench and socket for V6 in hand} & 21.7~foot-pound torque wrench and 3/4" socket \\
+% \myCheckBox{Torque wrench and socket for V6 in hand} & 21.7~foot-pound torque wrench and 3/4" socket \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Prepare LAr filling}} \\
@@ -203,15 +205,15 @@ so that the control panel and the pressure plot under it are visible and enabled
 \myCheckBox{Intake fan on} & Press the red button on the east wall of the LNTF to turn the exhaust 
 fan to high speed. Note: Button turns ``yellow'' when the fan is on high speed \\
 \myCheckBox{Oxygen deficiency sensor in place, oxygen deficiency monitor green} & \\
-\myCheckBox{Ventilation light on} & Red light at the east wall of the LNTF \\
-\myCheckBox{Ventilation of the clean room on} & Feel the wind blowing \\
+% \myCheckBox{Ventilation light on} & Red light at the east wall of the LNTF \\
+% \myCheckBox{Ventilation of the clean room on} & Feel the wind blowing \\
 \myCheckBox{HEPAs speed high} & HEPA control is in the back of the fans 
 (outside the clean tent), and there are five HEPAs \\
 
 \hline
 \multicolumn{2}{l}{\textbf{Cool down the LAr filter}} \\
 % \myCheckBox{V2 closed} & \\
-\myCheckBox{V15 closed, TP1 (the turbo pump) off} & \\
+% \myCheckBox{V15 closed, TP1 (the turbo pump) off} & \\
 \myCheckBox{LAr supply dewar has $<$~230 psi} & If it is higher, 
 vent the argon to lower pressure $\sim$230 psi.
 \newline If it is too low (such as 30 psi), open the pressure builder to 
@@ -225,8 +227,8 @@ build the pressure to $>$~100 psi \\
 \myCheckBox{V1, V2 open} & Purge the air in the tube \\
 \myCheckBox{LAr supply dewar (V28) opened} & \\
 \myCheckBox{When seeing LAr, V28, V2 closed} & Stop purging \\
-\myCheckBox{V6, V3 opened} & \\
-\myCheckBox{LAR supply dewar (V28) opened, carefully opened V7 according to PG3} & PG3 should be at 5 -- 10~psig \\
+\myCheckBox{V3 opened} & \\
+\myCheckBox{LAr supply dewar (V28) opened, carefully opened V7 according to PG3} & PG3 should be at 5 -- 10~psig \\
 \myCheckBox{Temperature in LAr filter at -100{\dC} (the minimal of the readout device) or cooling for an hour, 
 V28 (LAr supply dewar), V7 closed} & \\
 % \myCheckBox{Start taking data from the oxygen sensor} & \texttt{miniterm.py --eol=CR 
@@ -242,10 +244,10 @@ DO NOT use the same LAr dewar for filling and purging,
 \myCheckBox{V15 closed} & \\
 \myCheckBox{TP1 (turbo pump) off} & Prepare for filling the main vessel \\
 \myCheckBox{LArPix fan on} & Plug the cable into the extension cord used for the turbo pump \\
-\myCheckBox{Check V6, V12 open} & \\
+\myCheckBox{Check V12 open} & \\
 \myCheckBox{Double check the closed valves: V2, V5, V7, V8, V9, V11, V13, V14, V15} & \\
 \myCheckBox{LAr dewar (V28) closed} & \\
-\myCheckBox{Double check the open valves: V1, V3, V6, \textbf{V12 (IMPORTANT)}} & 
+\myCheckBox{Double check the open valves: V1, V3, \textbf{V12 (IMPORTANT)}} & 
 V12 is on the top lid, connecting to the hose.  
 If closed, the burst disk will crack when LAr just fills in.\\
 \myCheckBox{Oxygen sensor shows $<$1\% or plateaued} & Oxygen sensor is displayed at the ``LAr Filter'' 
@@ -256,16 +258,20 @@ We want to keep the pressure at about 2~psig at PG5 (16.6~psia at PT1) and not t
 We also don’t want the vessel pressure to go below 0~psig at PG5 (14.6~psia at PT1), 
 in which condition the air would come in and contaminate the LAr purity. \\
 \myCheckBox{The second operator fully opens V9} & \\
-\myCheckBox{The second operator opens V28 (LAr dewar) gradually} & \\
+\myCheckBox{The second operator opens V28 (LAr dewar) gradually, and the first operator opens V13 according 
+to the pressure in the vessel (PG5 or PT1)} & \\
 % One opens the LAr dewar slightly, and the other monitors PG5 (pressure gauge) or PT1.
 % When the pressure reaches 2.5 psig at PG5 (17.1 psia at PT1), open V15 slightly to prevent the pressure from building up.
-\myCheckBox{Fill with 10L at 10 slpm, and the pressure is less than 5~bar (better less than 3~bar)} & 
-Fill the numbers 10L (large box) at 10 slpm (smaller under the first), and click \texttt{Add N$_2$}.
+\myCheckBox{Thermosyphone load: Fill with 10~L at 10~slpm, and the pressure is less than 5~bar 
+(better less than 3~bar)} & 
+Use the ``Thermosyphon page''.  Fill the numbers 10~L (large box) at 10~slpm, 
+and click \texttt{Add N$_2$}.
 Check the pressure on the purple graph under the controls.\\
 \myCheckBox{LArPix power supply on.  Voltage at 24~V, current limit at 1~A} & \\
 \myCheckBox{LArPix starts taking data when the pressure reaches $\sim$14.6~psia} & 
 Use \texttt{Pedestal Monitor} in the LArPix tutorial, \url{https://github.com/SLACube/slacube-daq-tutorial#pedestal-monitor}. \\
-\myCheckBox{Equilibrium reached and {\color{orange}$\sim$20~psig (TBC)} at PG3 (pressure gauge on top of the LAr filter)} & \\
+\myCheckBox{Equilibrium reached and {\color{orange}$\sim$20~psig (TBC)} at PG3 (pressure 
+gauge on top of the LAr filter)} & \\
 \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 15~L} & \\
 \myCheckBox{Repeat slowly until reaching 55~L nitrogen in TSL11} & \\
 % \myCheckBox{Pressure in TSL11 stable and $<$~3~bar, add 5~L at 5~slpm.  Totally 20~L} & \\
@@ -296,22 +302,24 @@ Read PT1 from \textbf{Pressure} in the Ignition detector monitor \\
 % Note that the transfer line between the LAr dewar and V1 is rigid, and we must not overstretch it.  
 % Align the connector, and if it is not well aligned, loosen the fitting at V1.  
 % If you loosen the fitting at V1, don't forget to change the gasket \\
-\myCheckBox{V1 opened} & \\
-\myCheckBox{V28 (LAr dewar), V2 open} & Purge the air in the tube \\
+\myCheckBox{V1, V2 opened} & Prepare to purge the air \\
+\myCheckBox{V28 (LAr dewar) open} & Purge the air in the tube \\
 \myCheckBox{When seeing LAr from V2, V28 (LAr dewar), V2 closed} & \\
 \myCheckBox{V3 open} & \\
-\myCheckBox{Double check V6, V9 opened} & \\
+\myCheckBox{Double check V9 opened} & \\
 \myCheckBox{One operator ready for adjusting V13 all the time according to the pressure in SLArchetto.} &
 We want to keep the pressure at about 2~psig at PG5 (16.6~psia at PT1) and not to exceed 
 4~psig at PG5 (18.6~psia at PT1) all the time.
 We also don’t want the vessel pressure to go below 0~psig at PG5 (14.6~psia at PT1), 
 in which condition the air would come in and contaminate the LAr purity. \\
-\myCheckBox{The second operator opens V28 (LAr dewar) gradually} & \\
+\myCheckBox{The second operator opens V28 (LAr dewar) gradually, and the first operator
+open/adjust V13 according to the pressure in the vessel (PG5 or PT1)} & \\
 
 
 \hline
 \multicolumn{2}{l}{\textbf{Stop LAr filling}} \\
-\myCheckBox{Cryocon D (RTD 4) reaches $\sim$90~K at $\sim$16.1~psia, or drops significantly} & 
+\myCheckBox{Cryocon D (RTD 4) reaches $\sim$90~K at $\sim$16.1~psia, or drops significantly.
+Liquid level at 65~cm (SLArchetto page in Ignition)} & 
 This means the LAr reaches the desired liquid level.  
 Read RTD values at the Ignition detector monitor or the Cryocon device \\
 \myCheckBox{Liquid seen through the viewport} & 
@@ -325,7 +333,7 @@ We also don’t want the vessel pressure to go below 0~psig at PG5 (14.6~psia at
 in which condition the air would come in and contaminate the LAr purity. \\
 \myCheckBox{V28 (LAr dewar), V13 closed} & \\
 \myCheckBox{V1, V3, V9, V12 closed} & \\
-\myCheckBox{V6, V7 open} & Vent LAr filter to the venting line. \\
+\myCheckBox{V7 open} & Vent LAr filter to the venting line. \\
 % \myCheckBox{All valves closed} & \\
 \myCheckBox{Stop purging the SLArchetto venting line (downstream V13)} & \\
 \myCheckBox{Electrical box plugged and switched on} & 
@@ -348,7 +356,7 @@ Click the alarm button.  Warning range: 150 -- 163~K; Alert range: 145 -- 170~K 
 \myCheckBox{Cryoncon A, B, C, D (RTD 1, 2, 3, 4) show $<$~90K at $\sim$16~psia} & \\
 % \myCheckBox{V4, V5, V9, V11, V12 closed.  V6 opened} & Prepare to vent the LAr filter \\
 % \myCheckBox{LAr filter vented through V5} & \\
-\myCheckBox{V6, V7 closed when LAr filter venting completed} & \\
+\myCheckBox{V7 closed when LAr filter venting completed} & \\
 \myCheckBox{All valves closed} & 
 The valves likely were not closed because of the ice on them.  
 Check them again and completely close them \\
@@ -381,13 +389,14 @@ and click \texttt{HV ramping Interlock ON}, disabling the interlock.
 \newline Click \texttt{Start}.
 \newline More details in \href{https://drive.google.com/file/d/1cCuX7aAKU5J-GfdMOtygUpqLafvZ-xzg}{RampingHighVoltage.pdf}. \\
 \myCheckBox{High voltage (Cathode voltage) at 15~kV, field shell current (PicoAm Current) 
-at $\sim$9000 -- 10000~nA} & Check \texttt{Cathode Voltage} and \texttt{PicoAm Current} in 
+at $\sim$9000 -- 10000~nA (TBC)} & Check \texttt{Cathode Voltage} and \texttt{PicoAm Current} in 
 the SLArchetto High Voltage Control page, or \texttt{Voltage} and \texttt{Current} in the main monitor \\
 \myCheckBox{Enable the alert and alarm for high voltage} & Click the alarm button.  
 Warning range: 14.95 -- 15.05~kV; Alert range: 14.9 -- 15.1~kV; Alarm range: 14.8 -- 15.2~kV \\
-\myCheckBox{Enable the warning, alert, and alarm for the current} & 
+\myCheckBox{Enable the warning, alert, and alarm for the current, and the alarms on updates 
+of the current} & 
 Click the alarm button.  Warning range: -20,000 -- 0~nA; Alert range: -25,000 -- 0~nA; 
-Alarm range: -30,000 -- 0~nA \\
+Alarm range: -30,000 -- 0~nA (TBC) \\
 \myCheckBox{HV ramping Interlock ON} & \\
 
 \hline

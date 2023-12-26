@@ -85,22 +85,22 @@ and investigate.
 \underline{Technical notes:}
 \begin{itemize}
 \setlength\itemsep{-0.2em}
-\item V3, V5, V6, V16/V17, V18/V19 isolate the LAr filter.  
-During the regeneration, V3, V5, and V6 should be always closed.  
-V17 and V18 are metal valves, which will be always open.
+\item V3, V5, V7, V9, V16/V17, V19 isolate the LAr filter.  
+During the regeneration, V3 and V5 should be always closed.  
+V17 is a metal valve, which will be always open.
 We will rely on V16 and V19 to 
-isolate the LAr filter, instead of V17 and V18.
+isolate the LAr filter, instead of V17.
 However, we close V17 after regeneration to prevent cold Ar from entering
 the gas heater when filling LAr.
 \item V16, V20, V21, V22, V24, V25 are diaphrame valves and are not adjustable.
 When opening them, make a full open.
 Use Reg1/2/3 and V19 to control the flow rate.
 \item The Ar gas flows from the gas port of the LAr dewar, Reg3, V20, V16, HT1, V17, into the LAr filter, 
-and vents from V18, V19, FC1, outside the LNTF hut along the venting pipe, as shown in 
+and vents from V19, FC1, outside the LNTF hut along the venting pipe, as shown in 
 Fig.~\ref{fig:ArFlow}.
 \item The 2\%{\Hydro}+Ar gas flows from the gas cylinders, Reg1/2, V26/V27, V22, V16, HT1, V17, 
 into the LAr filter, 
-and vents from V18, V19, FC1, outside the LNTF hut along the venting pipe, 
+and vents from V19, FC1, outside the LNTF hut along the venting pipe, 
 as shown in Fig.~\ref{fig:H2Flow}.
 \item The vacuum vessel surrounding the LAr filter should be evacuated from V4 all the time 
 during regeneration.  
@@ -136,8 +136,8 @@ check the humidity.
 \item The LED light on the gas heater control may be broken.  The controlling part 
 should be functional, and you just have to follow the labels for the toggle switch.
 \item The torque for V17 is 4~foot-pound, 3/4" socket.
-\item The torque for V18 is 21.7 foot-pound, 3/4" socket (not needed, just FYI).  
-Need different torque wrenches for V17 and V18 typically.
+% \item The torque for V18 is 21.7 foot-pound, 3/4" socket (not needed, just FYI).  
+% Need different torque wrenches for V17 and V18 typically.
 \end{itemize}
 
 %-------------------------------------------------------------------
@@ -145,7 +145,7 @@ Need different torque wrenches for V17 and V18 typically.
 \clearpage
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[angle=90,origin=c,height=7.3in]{fig/PIDv8.3.pdf}
+\includegraphics[angle=90,origin=c,height=7.3in]{fig/PIDv8.4.pdf}
 \caption{P\&ID}
 \label{fig:PID}
 \end{center}
@@ -156,7 +156,7 @@ Need different torque wrenches for V17 and V18 typically.
 \clearpage
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[angle=90,origin=c,height=7.3in]{fig/RegenerationAr_PIDv8.3.pdf}
+\includegraphics[angle=90,origin=c,height=7.3in]{fig/RegenerationAr_PIDv8.4.pdf}
 \caption{Gas flow direction: Ar gas}
 \label{fig:ArFlow}
 \end{center}
@@ -167,7 +167,7 @@ Need different torque wrenches for V17 and V18 typically.
 \clearpage
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[angle=90,origin=c,height=7.3in]{fig/RegenerationH2_PIDv8.3.pdf}
+\includegraphics[angle=90,origin=c,height=7.3in]{fig/RegenerationH2_PIDv8.4.pdf}
 \caption{Gas flow direction: 2\%{\Hydro}+Ar gas}
 \label{fig:H2Flow}
 \end{center}
@@ -185,7 +185,7 @@ Checklist & What to Do and Detailed Description \\
 \myCheckBox{1 ultra high purity LAr dewar} & 
 We use the gas port of the LAr because we need a lot amount of gas Ar.\\
 \myCheckBox{The LAr dewar lifted in the LNTF hut} & \\
-\myCheckBox{5 cylinders of Ar+2\%H$_2$ gas} & \\
+\myCheckBox{4 cylinders of Ar+2\%H$_2$ gas} & \\
 \myCheckBox{The GAS port of the ultra high purity LAr dewar connected to Reg3 and then V20 with 
 a copper tube} & \\
 \myCheckBox{Two Ar+2\%{\Hydro} gas cylinders connected to Reg1/Reg2 and V24/V25 line} & \\
@@ -196,7 +196,7 @@ a few layers of aluminum foils} & For thermal insulation \\
 \myCheckBox{V4 connected to the scroll pump} & Prepare to evacuate the vacuum vessel \\
 \myCheckBox{V4 opened} & \\
 \myCheckBox{V4 opened, scroll pump on} & Evacuate the vacuum vessel \\
-\myCheckBox{V3, V5, V6, V7, V8, V9, V10, V11, V12, v18 closed} & \\
+\myCheckBox{V3, V5, V7, V8, V9, V10, V11, V12, V16, V17, V19 closed} & \\
 \myCheckBox{All the temperature and humidity sensors connected} & \\
 \myCheckBox{Detector control (Ignition) set up} & Instruction: 
 \url{https://docs.google.com/document/d/17dsjQEY3hDOYmxKYikNqeVWEoB0qyarqYrbijNPSBfg/edit?usp=sharing} \\
@@ -208,6 +208,8 @@ a few layers of aluminum foils} & For thermal insulation \\
 \myCheckBox{All the doors of the LNTF hut opened} & \\
 \myCheckBox{Intake fan on} & The emergency button is yellow \\
 \myCheckBox{Oxygen deficiency sensor in place, oxygen deficiency monitor green} & \\
+\myCheckBox{HEPAs speed high} & HEPA control is in the back of the fans 
+(outside the clean tent), and there are five HEPAs \\
 \myCheckBox{Heat warning signs posted on the clean tent and the frame} & \\
 \myCheckBox{Gas heater shutdown temperature set to 355{\dC}} & 
 In the detector control system, click ``LAr Filter,'' set the value in 
@@ -218,8 +220,8 @@ enable the alarm and set the value\\
 
 \hline
 \multicolumn{2}{l}{\textbf{Preheating with Ar gas}} \\
-\myCheckBox{V3, V5, V6, V16, V19, V20, V21, V22, V23, V24, V25, V26, V27 closed} & \\
-\myCheckBox{V17, V18 fully opened} & Not going to use these two valves to isolate the LAr filter; 
+\myCheckBox{V3, V5, V7, V9, V16, V19, V20, V21, V22, V23, V24, V25, V26, V27 closed} & \\
+\myCheckBox{V17 fully opened} & Not going to use this valve to isolate the LAr filter; 
 keeping them open \\
 \myCheckBox{V4 opened, the connected scroll pump on} & \\
 \myCheckBox{PG6 at 0 psia} & \\
@@ -232,8 +234,9 @@ control plugged into the variac power supply} & \\
 Purge the air in the connection tube \\
 \myCheckBox{V21, GMV3 closed} & Finish purging \\
 \myCheckBox{V16 opened} & \\
-\myCheckBox{GMV3 opened, Reg3 increased} & Start flowing Ar gas to the LAr filter\\
-\myCheckBox{PG3 at 5 -- 15~psig (20 -- 30~psia), V19 opened} & \\
+\myCheckBox{One operator ready to open V19.  V19 closed} & \\
+\myCheckBox{GMV3 opened, Reg3 increased.  PG3 at 5 -- 15~psig (20 -- 30~psia), V19 opened} 
+& Start flowing Ar gas to the LAr filter\\
 \myCheckBox{Gas flow $\sim$6.7~scfm, PG3 at 20 -- 35~psia, stable} & \\
 \myCheckBox{Variac power supply on, the voltage increased to 55V} & Turn on the heater \\
 \myCheckBox{10 minutes of stable conditions reached} & \\
@@ -249,15 +252,15 @@ Purge the air in the connection tube \\
 \multicolumn{2}{l}{\textbf{Regenerating copper sieves}} \\
 \myCheckBox{Variac power supply off.  Voltage set at 0} & \\
 \myCheckBox{V26, V27, V24, V25, V23, V22, V20, V21, V16, V19 closed} & \\
-\myCheckBox{V17, V18 fully opened} & Not going to use these two valves to isolate the LAr filter; 
+\myCheckBox{V17 fully opened} & Not going to use this valve to isolate the LAr filter; 
 keeping them open \\
 \myCheckBox{Two Ar+2\%{\Hydro} gas cylinders connected to Reg1/Reg2 and V24/V25 line} & \\
 \myCheckBox{Purge the air: GMV1 opened, Reg1 increased, V24, V23 opened} & 
-Purge the air in the connection tube until V22 for the first time \\
+Purge the air in the connection tube until the V22 location for the first time \\
 \myCheckBox{GMV1, V23 closed} & Finish purging \\
 \myCheckBox{V22, V16 opened} & \\
-\myCheckBox{GMV1 opened, Reg1 increased}
-\myCheckBox{PG3 at 5 -- 15~psig (20 -- 30~psia), V19 opened} & \\
+\myCheckBox{One operator ready to open V19.  V19 closed} & \\
+\myCheckBox{GMV1 opened, Reg1 increased.  PG3 at 5 -- 15~psig (20 -- 30~psia), V19 opened} & \\
 \myCheckBox{Gas flow between 50 and 160~slpm (Ar), or between 2.2 and 6.7~scfm (marked as Air).  
 Preferably at 3.5~scfm Air.
 PG3 (LAr filter) at 5 --20~psig (20 -- 35~psia).  The outlet of Reg1/2 at 20 -- 40~psig.} & 
@@ -267,20 +270,24 @@ Usually V19 is not widely open. \\
 Should the temperature exceed 225{\dC} anywhere in the bed, switch to {\Hydro}-free gas and 
 turn off the gas heater power supply until the hot zone cools back down to 200 -- 210{\dC}, 
 then resume feeding the {\Hydro} gas mixture and turn on the gas heater power supply \\
+
 \multicolumn{2}{l}{\textbf{Gas cylinder transition}} \\
 \myCheckBox{The other gas cylinder (GCYL2) connected before the operating one (GCYL1) finishes} & 
 or vice versa \\
 \myCheckBox{Purge the connection line: GMV2 open, Reg2 open, V27 open} & 
-Purge the air until V25.  Can also evacuate from V27 instead of purging.  
+Purge the air until the V25 location.  Can also evacuate from V27 instead of purging.  
 When connecting to a pump, need to install a PRV (can be a KF cap) so that the pump
 will not risk to encounter high pressure. \\
 \myCheckBox{GMV2, V27 closed} & Finish purging \\
 \myCheckBox{V22, V16 opened} & \\
-\myCheckBox{GMV2 opened, Reg2 increased}
-\myCheckBox{PG3 at 5 -- 15~psig (20 -- 30~psia), V19 opened} & \\
-\myCheckBox{Switching the cylinders (when the operating one has the pressure of $\sim$300~psig): 
-V24 closed and V25 opened} &
-Transition swiftly \\
+\myCheckBox{One operator available to adjust V19 all the time, keeping PG3 at 5 -- 15~psig 
+(20 -- 30~psia)} & \\
+\myCheckBox{The operating cylinder has the pressure of $\sim$300~psig} & \\
+\myCheckBox{V24 closed. GMV2 opened, V25 opened, Reg2 increased} & Transition swiftly.  
+\textbf{If no gas flow, turn off the gas heater.} \\
+\myCheckBox{PG3 at 5 -- 15~psig (20 -- 30~psia)} & \\
+\myCheckBox{Replaced the empty cylinder with a full one} & \\
+
 \multicolumn{2}{l}{\textbf{Finishing the copper seive regeneration}} \\
 \myCheckBox{The temperature of the all catalyst bed stable or subsiding} & \\
 \myCheckBox{Humidity plateaued at 0.02\% for $>$~10~minutes} & Copper sieves regenerated \\
@@ -293,15 +300,16 @@ Transition swiftly \\
 \multicolumn{2}{l}{\textbf{Completion; cooling down}} \\
 \myCheckBox{Variac power supply off.  Voltage set at 65~V} & \\
 \myCheckBox{V16, V19, V20, V21, V22, V23, V24, V25, V26, V27 closed} & \\
-\myCheckBox{V17, V18 fully opened} & Not going to use these two valves to isolate the LAr filter; 
+\myCheckBox{V17 fully opened} & Not going to use this valve to isolate the LAr filter; 
 keeping them open \\
 \myCheckBox{The GAS port of the ultra high purity LAr dewar connected to Reg3 and then V20} & \\
 \myCheckBox{Purge the air: GMV3 opened, Reg3 increased, V20, V21 opened} & Purge the air in the 
 connection tube \\
 \myCheckBox{V21, GMV3 closed} & Finish purging \\
 \myCheckBox{V16 opened} & \\
-\myCheckBox{GMV3 opened, Reg3 increased} & Start flowing Ar gas to the LAr filter\\
-\myCheckBox{PG3 at 5 -- 15~psig (20 -- 30~psia), V19 opened} & \\
+\myCheckBox{One operator ready to open V19.  V19 closed} & \\
+\myCheckBox{GMV3 opened, Reg3 increased.  PG3 at 5 -- 15~psig (20 -- 30~psia), V19 opened} 
+& Start flowing Ar gas to the LAr filter\\
 \myCheckBox{Gas flow $\sim$6.7~scfm, stable} & \\
 \myCheckBox{Variac power supply on, the voltage slowly decreased to 20~V} & Turn on the heater \\
 \myCheckBox{Temperature in the LAr filter decreased to $\sim$35{\dC}} & \\
