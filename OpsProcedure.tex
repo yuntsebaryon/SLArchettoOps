@@ -9,8 +9,8 @@
 \usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
 \usepackage{longtable}
 \usepackage{xcolor}
-\usepackage{lineno}
-\linenumbers
+% \usepackage{lineno}
+% \linenumbers
 
 % ------------------------------------------------------------------------
 \newcommand{\myCheckBox}{\CheckBox[width=0.8em,bordercolor={0.65 0.79 0.94},height=0.8em]}
@@ -105,7 +105,16 @@ Note that the filling rate is not linear because more LAr evacuates at the begin
         amount accordingly (usually adding or removing 1-3~L of nitrogen).
     \end{itemize}
 \item LArPix DAQ tutorial can be found at \url{https://github.com/SLACube/slacube-daq-tutorial}.
-\item Take LArPix data during filling (but after the vessel is at $\ge$ atmospheric pressure).
+    \begin{itemize}
+        \item DO NOT run DAQ when the system is in vacuum.
+        \item Configure the hydra network, take pedestal runs and find bad channels at room temperature.
+              Then do threshold and selftrigger tests at room temperature as well.
+        \item Monitor pedestal during LAr filling (after the vessel is at $\ge$ atmospheric pressure).
+        \item After LAr is filled, set threshold and test the trigger rate with HV = 0V.
+        \item After HV is ramped up, try a few selftrigger tests.  Manually increase the trigger threshold
+              if the trigger rate is too high ($>2$Hz per channel).
+    \end{itemize}
+% \item Take LArPix data during filling (but after the vessel is at $\ge$ atmospheric pressure).
 \item Turn off the LArPix tile while ramping up the high voltage.
 \item Once SLArchetto is filled, close V12, V13, V9.
 Open V7 to vent Ar in the LAr filter.
@@ -158,7 +167,9 @@ Checklist & What to Do and Detailed Description \\
 \multicolumn{2}{l}{\textbf{Readiness}} \\
 \myCheckBox{3 ultra high purity LAr dewars lifted in the LNTF hut} & \\
 \myCheckBox{TPC grounding checked} & \\
-\myCheckBox{LArPix tests in the room temperature at atmosphere} & LArPix tutorial at 
+\myCheckBox{LArPix tests in the room temperature at atmosphere: Configure the hydra network,
+take pedestal runs, find bad channels, check the threshold and test selftrigger rates.} 
+& LArPix tutorial at 
 \url{https://github.com/SLACube/slacube-daq-tutorial} \\
 \myCheckBox{Vessel closed and tightened} & \\
 \myCheckBox{Leak checked} & \\
@@ -340,7 +351,7 @@ in which condition the air would come in and contaminate the LAr purity. \\
 Toggle up, switch on in case we need heaters \\
 \myCheckBox{Take pedestal run} & LArPix DAQ tutorial for \texttt{Pedestal Test}: 
 \url{https://github.com/SLACube/slacube-daq-tutorial#pedestal-test}. \\
-\myCheckBox{Set the threshold of LArPix channels with HV off} & 
+\myCheckBox{Set the threshold of LArPix channels with HV off and test the selftrigger rate} & 
 LArPix DAQ tutorial for \texttt{Threshold Setting}: \url{https://github.com/SLACube/slacube-daq-tutorial#threshold-setting} \\
 \myCheckBox{Enable the warning, alert, and alarm for the pressure} & 
 Click the alarm button.  Warning range: 14 -- 17.7~psia; Alert range: 14 -- 18.7~psia; 
